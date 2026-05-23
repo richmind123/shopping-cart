@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopcart - Headphones For You!</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="bg-green-900 text-white text-md px-6 py-3 flex justify-between items-center">
+        <span class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +2348160093540
+        </span>
+        <span>Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
+        <div class="flex gap-4">
+            <select class="bg-green-900 text-white border-none outline-none">
+                <option>Eng</option>
+                <option>Fra</option>
+                <option>Spa</option>
+            </select>
+            <select class="bg-green-900 text-white border-none outline-none">
+                <option>Location</option>
+                <option>Lagos</option>
+                <option>London</option>
+                <option>New York</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="navbar bg-base-0 shadow-md px-6 py-7 gap-4">
+        <div class="flex-1">
+            <a href="./index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer"><img
+                    src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart</a>
+        </div>
+        <nav class="flex gap-4">
+            <!-- Category Dropdown -->
+            <div class="relative">
+                <a id="category-btn"
+                    class="text-lg font-medium hover:text-primary cursor-pointer flex items-center gap-1">
+                    Category
+                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </a>
+
+                <!-- Dropdown -->
+                <div id="category-dropdown"
+                    class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
+                    <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
+                    <div class="grid grid-cols-2 gap-3">
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/Chair1436.png" alt="Furniture" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Furniture</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/handbag1436-4.png" alt="Hand Bag" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Hand Bag</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/shoes1436-1.png" alt="Shoe" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Shoe</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <a href="headphones.html"
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white transition-all duration-200 group">
+                            <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center">
+                                <img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone"
+                                    class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800 group-hover:text-green-700 transition-colors">
+                                    Headphone</p>
+                                <p class="text-gray-400 text-xs">240 Item Available</p>
+                            </div>
+                        </a>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/laptoprec1436-2.png" alt="Laptop" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Laptop</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/Booksangle 1436-5.png" alt="Book" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Book</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <a class="text-lg font-medium hover:text-primary cursor-pointer">Deals</a>
+            <a class="text-lg font-medium hover:text-primary cursor-pointer">What's New</a>
+            <a class="text-lg font-medium hover:text-primary cursor-pointer">Delivery</a>
+        </nav>
+        <div class="flex-1 flex justify-center relative" id="search-container">
+            <label
+                class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
+                <input type="text" id="search-input" placeholder="Search Product"
+                    class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
+                <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+            </label>
+
+            <div id="search-results-panel"
+                class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
+
+                <div id="trending-box" class="mb-2">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Trending Searches</p>
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        <span
+                            class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">MacBook</span>
+                        <span
+                            class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">AirPods</span>
+                        <span
+                            class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">Ipad</span>
+                    </div>
+                </div>
+
+                <div id="results-box">
+                    <p id="results-heading" class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+                        Suggested
+                        Products</p>
+                    <div class="space-y-2" id="live-search-results">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex gap-3">
+            <i data-lucide="user" class="w-7 h-7"></i>
+            <a class="cursor-pointer  flex text-lg font-medium hover:text-secondary">
+                Account</a>
+            <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+            <a class="cursor-pointer  flex text-lg font-medium hover:text-secondary">
+                Cart</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section
+        class="mx-4 my-6 rounded-2xl overflow-hidden bg-[#f5ede0] flex items-center justify-between px-12 py-10 relative min-h-[200px]">
+        <div class="max-w-xs z-10">
+            <h1 class="text-4xl font-extrabold text-green-900 leading-tight mb-6">Grab Upto 50% Off On Selected
+                Headphone</h1>
+            <button
+                class="bg-green-900 hover:bg-green-800 text-white rounded-full px-8 py-3 font-semibold transition-colors duration-300">Buy
+                Now</button>
+        </div>
+        <img src="./Images/ladyheadphone-1.png" alt="Headphone Lady"
+            class="absolute right-10 bottom-0 h-[220px] object-contain" />
+    </section>
+
+    <!-- Filter Bar -->
+    <section class="px-8 py-4 flex items-center justify-between flex-wrap gap-3">
+        <div class="flex gap-3 flex-wrap">
+            <button
+                class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Headphone
+                Type <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+            <button
+                class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Price
+                <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+            <button
+                class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Review
+                <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+            <button
+                class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Color
+                <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+            <button
+                class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Material
+                <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+            <button
+                class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Offer
+                <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+            <button
+                class="flex items-center gap-2 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer"><i
+                    data-lucide="sliders-horizontal" class="w-4 h-4"></i> All Filters</button>
+        </div>
+        <button
+            class="flex items-center gap-1 border border-gray-300 rounded-full px-4 py-2 text-sm font-medium hover:border-green-700 cursor-pointer">Sort
+            by <i data-lucide="chevron-down" class="w-4 h-4"></i></button>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="px-8 py-6">
+        <h2 class="text-2xl font-bold mb-6">Headphones For You!</h2>
+        <div class="grid grid-cols-4 gap-6">
+
+            <!-- Card 1 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./public/Images/wireless earbuds.png" alt="Wireless Earbuds IPX8"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">Wireless Earbuds, IPX8</h3>
+                        <span class="font-bold text-sm">$89.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">Organic Cotton, fairtrade certified</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./Images/airpod max-min.png" alt="AirPods Max"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">AirPods Max</h3>
+                        <span class="font-bold text-sm">$559.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">A perfect balance of high-fidelity audio</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./public/Images/Flower Laptop Sleeve.png" alt="Bose BT Earphones"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">Bose BT Earphones</h3>
+                        <span class="font-bold text-sm">$289.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">Table with air purifier, stained veneer/black</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./Images/VIVEFOX Headphones.png" alt="VIVEFOX Headphones"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">VIVEFOX Headphones</h3>
+                        <span class="font-bold text-sm">$39.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">Wired Stereo Headsets With Mic</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./Images/JBL TUNE 600BTNC.png" alt="JBL TUNE 600BTNC"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">JBL TUNE 600BTNC</h3>
+                        <span class="font-bold text-sm">$59.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">Premium Bone Conduction Open Ear Bluetooth</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./Images/TAGRY Bluetooth.png" alt="TAGRY Bluetooth"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">TAGRY Bluetooth</h3>
+                        <span class="font-bold text-sm">$109.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">256, 8 core GPU, 8 GB</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./Images/Monster MNFLEX.png" alt="Monster MNFLEX"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">Monster MNFLEX</h3>
+                        <span class="font-bold text-sm">$89.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">Flex Active Noise Cancelling Bluetooth</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group">
+                <div class="relative p-6 flex items-center justify-center h-56">
+                    <img src="./Images/Mpow CH6.png" alt="Mpow CH6"
+                        class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                    <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+                        <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+                    </button>
+                </div>
+                <div class="bg-white p-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <h3 class="font-bold text-sm">Mpow CH6</h3>
+                        <span class="font-bold text-sm">$569.<sup>00</sup></span>
+                    </div>
+                    <p class="text-gray-500 text-xs mb-2">Kids Headphones</p>
+                    <div class="flex items-center gap-1 text-green-400 mb-3">
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <i data-lucide="star" class="w-3 h-3 fill-green-400"></i>
+                        <span class="text-gray-500 text-xs">(121)</span>
+                    </div>
+                    <button
+                        class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-16 py-16 border-t border-gray-200">
+        <div class="grid grid-cols-5 gap-8">
+
+            <!-- Logo & Description -->
+            <div class="col-span-1">
+                <a class="flex items-center gap-2 cursor-pointer mb-6">
+                    <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" />
+                    <span class="text-2xl font-extrabold text-green-700">Shopcart</span>
+                </a>
+                <p class="text-gray-500 text-sm mb-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                    amet sint.
+                    Velit officia consequat duis enim velit mollit.</p>
+
+                <!-- Accepted Payments -->
+                <h4 class="font-bold mb-4">Accepted Payments</h4>
+                <div class="grid grid-cols-4 gap-2">
+                    <img src="./Images/stripe.png" alt="Stripe"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/visa.png" alt="Visa"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/Mastercard.png" alt="Mastercard"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/Amazon.png" alt="Amazon"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/Klarna.png" alt="Klarna"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/PayPal.png" alt="PayPal"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/ApplePay.png" alt="Apple Pay"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                    <img src="./Images/GooglePay.png" alt="Google Pay"
+                        class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+                </div>
+            </div>
+
+            <!-- Department -->
+            <div>
+                <h4 class="font-bold text-lg mb-6">Department</h4>
+                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Fashion</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Education Product</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Frozen Food</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Beverages</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Organic Grocery</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Office Supplies</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Beauty Products</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Books</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Electronics & Gadget</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Travel Accessories</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Fitness</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Sneakers</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Toys</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Furniture</li>
+                </ul>
+            </div>
+
+            <!-- About Us -->
+            <div>
+                <h4 class="font-bold text-lg mb-6">About Us</h4>
+                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        About Shopcart</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Careers</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        News & Blog</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Help</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Press Center</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Shop By Location</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Shopcart Brands</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Affiliate & Partners</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Ideas & Guides</li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="font-bold text-lg mb-6">Services</h4>
+                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Gift Card</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Mobile App</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Shipping & Delivery</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Order Pickup</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Account Signup</li>
+                </ul>
+            </div>
+
+            <!-- Help -->
+            <div>
+                <h4 class="font-bold text-lg mb-6">Help</h4>
+                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Shopcart Help</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Returns</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Track Orders</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Contact Us</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Feedback</li>
+                    <li
+                        class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+                        Security & Fraud</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-gray-200 mt-12 pt-6 text-center text-gray-400 text-sm">
+            © 2024 Shopcart. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <script type="module" src="./src/main.js"></script>
+
+</body>
+
+</html>
