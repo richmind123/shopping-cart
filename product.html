@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopcart - Product</title>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="bg-green-900 text-white text-md px-6 py-3 flex justify-between items-center">
+        <span class="flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4"></i>
+            +2348160093540
+        </span>
+        <span>Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
+        <div class="flex gap-4">
+            <select class="bg-green-900 text-white border-none outline-none">
+                <option>Eng</option>
+                <option>Fra</option>
+                <option>Spa</option>
+            </select>
+            <select class="bg-green-900 text-white border-none outline-none">
+                <option>Location</option>
+                <option>Lagos</option>
+                <option>London</option>
+                <option>New York</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="navbar bg-base-0 shadow-md px-6 py-7 gap-4">
+        <div class="flex-1">
+            <a href="/shopping-cart/index.html"
+                class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer"><img src="./Images/logo.png"
+                    alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart</a>
+        </div>
+        <nav class="flex gap-4">
+            <!-- Category Dropdown -->
+            <div class="relative">
+                <a id="category-btn"
+                    class="text-lg font-medium hover:text-primary cursor-pointer flex items-center gap-1">
+                    Category
+                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </a>
+
+                <!-- Dropdown -->
+                <div id="category-dropdown"
+                    class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
+                    <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
+                    <div class="grid grid-cols-2 gap-3">
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/Chair1436.png" alt="Furniture" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Furniture</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/handbag1436-4.png" alt="Hand Bag" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Hand Bag</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/shoes1436-1.png" alt="Shoe" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Shoe</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <a href="/shopping-cart/headphones.html"
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white transition-all duration-200 group">
+                            <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center">
+                                <img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone"
+                                    class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800 group-hover:text-green-700 transition-colors">
+                                    Headphone</p>
+                                <p class="text-gray-400 text-xs">240 Item Available</p>
+                            </div>
+                        </a>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/laptoprec1436-2.png" alt="Laptop" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Laptop</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
+                            <img src="./Images/Booksangle 1436-5.png" alt="Book" class="w-14 h-14 object-contain" />
+                            <div>
+                                <p class="font-semibold">Book</p>
+                                <p class="text-gray-400 text-sm">240 Item Available</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <a class="text-lg font-medium hover:text-primary cursor-pointer">Deals</a>
+            <a class="text-lg font-medium hover:text-primary cursor-pointer">What's New</a>
+            <a class="text-lg font-medium hover:text-primary cursor-pointer">Delivery</a>
+        </nav>
+        <div class="flex-1 flex justify-center relative" id="search-container">
+            <label
+                class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
+                <input type="text" id="search-input" placeholder="Search Product"
+                    class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
+                <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
+            </label>
+
+            <div id="search-results-panel"
+                class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
+
+                <div id="trending-box" class="mb-2">
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Trending Searches</p>
+                    <div class="flex flex-wrap gap-2 mb-2">
+                        <span
+                            class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">MacBook</span>
+                        <span
+                            class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">AirPods</span>
+                        <span
+                            class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">Ipad</span>
+                    </div>
+                </div>
+
+                <div id="results-box">
+                    <p id="results-heading" class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
+                        Suggested
+                        Products</p>
+                    <div class="space-y-2" id="live-search-results">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex gap-3">
+            <i data-lucide="user" class="w-7 h-7"></i>
+            <a class="cursor-pointer  flex text-lg font-medium hover:text-secondary">
+                Account</a>
+            <i data-lucide="shopping-cart" class="w-7 h-7"></i>
+            <a class="cursor-pointer  flex text-lg font-medium hover:text-secondary">
+                Cart</a>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="px-16 py-4 text-sm text-gray-500 flex items-center gap-2">
+        <a href="/shopping-cart/index.html" class="hover:text-green-700 cursor-pointer">Home</a>
+        <span>/</span>
+        <a href="/shopping-cart/headphones.html" class="hover:text-green-700 cursor-pointer">Headphones</a>
+        <span>/</span>
+        <span id="breadcrumb-name" class="text-gray-800 font-medium"></span>
+    </div>
+
+    <!-- Product Detail -->
+    <section class="px-16 py-8 flex gap-16">
+
+        <!-- Left: Images -->
+        <div class="flex gap-4">
+            <!-- Thumbnails -->
+            <div class="flex flex-col gap-3" id="thumbnails"></div>
+
+            <!-- Main Image -->
+            <div class="bg-gray-100 rounded-2xl p-8 flex items-center justify-center w-[400px] h-[400px]">
+                <img id="main-image" src="" alt="" class="w-full h-full object-contain" />
+            </div>
+        </div>
+
+        <!-- Right: Info -->
+        <div class="flex-1 max-w-md">
+            <h1 id="product-name" class="text-4xl font-extrabold mb-2"></h1>
+            <p id="product-description" class="text-gray-500 mb-3"></p>
+
+            <!-- Rating -->
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+                <i data-lucide="star" class="w-5 h-5 fill-green-400"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-green-400"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-green-400"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-green-400"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-green-400"></i>
+                <span class="text-gray-500 text-sm">(121)</span>
+            </div>
+
+            <!-- Price -->
+            <p class="text-3xl font-extrabold mb-1">$<span id="product-price"></span></p>
+            <p class="text-gray-400 text-sm mb-6">Suggested payments with 6 months special financing</p>
+
+            <hr class="mb-6" />
+
+            <!-- Color Selector -->
+            <p class="font-semibold mb-3">Choose a Color</p>
+            <div class="flex gap-3 mb-6" id="color-selector"></div>
+
+            <hr class="mb-6" />
+
+            <!-- Quantity -->
+            <div class="flex items-center gap-6 mb-6">
+                <div class="flex items-center border-2 border-gray-300 rounded-full overflow-hidden">
+                    <button onclick="changeQty(-1)" class="px-4 py-2 text-xl font-bold hover:bg-gray-100">-</button>
+                    <span id="qty-display" class="px-4 py-2 text-lg font-semibold">1</span>
+                    <button onclick="changeQty(1)" class="px-4 py-2 text-xl font-bold hover:bg-gray-100">+</button>
+                </div>
+                <p class="text-sm text-gray-500">Only <span id="stock-count" class="text-green-700 font-bold"></span>
+                    Items Left! Don't miss it</p>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-4 mb-8">
+                <button onclick="buyNow()"
+                    class="flex-1 bg-green-900 hover:bg-green-800 text-white rounded-full py-4 font-semibold transition-colors duration-300">Buy
+                    Now</button>
+                <button onclick="addToCart()"
+                    class="flex-1 border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full py-4 font-semibold transition-colors duration-300">Add
+                    to Cart</button>
+            </div>
+
+            <!-- Delivery Info -->
+            <div class="flex flex-col gap-4">
+                <div class="flex items-start gap-4 border-b border-gray-200 pb-4">
+                    <i data-lucide="truck" class="w-6 h-6 text-green-700 mt-1"></i>
+                    <div>
+                        <p class="font-bold">Free Delivery</p>
+                        <p class="text-gray-500 text-sm">Enter your Postal code for Delivery Availability</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <i data-lucide="refresh-ccw" class="w-6 h-6 text-green-700 mt-1"></i>
+                    <div>
+                        <p class="font-bold">Return Delivery</p>
+                        <p class="text-gray-500 text-sm">Free 30 days Delivery Returns. <span
+                                class="underline cursor-pointer">Details</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module" src="./src/product.js"></script>
+</body>
+
+</html>

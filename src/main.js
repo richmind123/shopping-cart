@@ -292,3 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Open Product Page
+window.openProduct = function (product) {
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  window.location.href = "./product.html";
+};
