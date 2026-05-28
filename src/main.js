@@ -1,6 +1,212 @@
 import "./style.css";
 import { createIcons, icons } from "lucide";
 
+// ── Headphone Products List ──
+const headphoneProducts = [
+  {
+    name: "Wireless Earbuds IPX8",
+    price: 89,
+    description: "Organic Cotton, fairtrade certified",
+    img: "./Images/wireless earbuds.png",
+    thumbnails: ["./Images/wireless earbuds.png"],
+    colors: ["#1f2937", "#f87171", "#86efac"],
+    stock: 12,
+    specs: {
+      brand: "Generic",
+      model: "Wireless Earbuds IPX8",
+      releaseDate: "2023",
+      modelNumber: "IPX8-TWS",
+      headphoneType: "In-Ear",
+      connectivity: "Wireless",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "6",
+      numDrivers: "1",
+      waterResistant: "Yes",
+      weight: "45",
+      batteryLife: "8",
+    },
+  },
+  {
+    name: "AirPods Max",
+    price: 559,
+    description: "A perfect balance of high-fidelity audio",
+    img: "./Images/airpod max-min.png",
+    thumbnails: ["./Images/airpod max-min.png"],
+    colors: ["#f87171", "#1f2937", "#86efac", "#e5e7eb", "#1e3a5f"],
+    stock: 12,
+    specs: {
+      brand: "Apple",
+      model: "AirPods Max Wireless Headphones",
+      releaseDate: "December 2020",
+      modelNumber: "AirPods Max",
+      headphoneType: "Over-Ear",
+      connectivity: "Wireless",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "40",
+      numDrivers: "1",
+      waterResistant: "No",
+      weight: "385",
+      batteryLife: "20",
+    },
+  },
+  {
+    name: "Bose BT Earphones",
+    price: 289,
+    description: "Table with air purifier, stained veneer/black",
+    img: "./Images/Bose BT Earphones.png",
+    thumbnails: ["./Images/Bose BT Earphones.png"],
+    colors: ["#1f2937", "#e5e7eb"],
+    stock: 8,
+    specs: {
+      brand: "Bose",
+      model: "Bose BT Earphones",
+      releaseDate: "2022",
+      modelNumber: "BOSE-BT-EP",
+      headphoneType: "In-Ear",
+      connectivity: "Wireless",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "8",
+      numDrivers: "1",
+      waterResistant: "Yes",
+      weight: "60",
+      batteryLife: "6",
+    },
+  },
+  {
+    name: "VIVEFOX Headphones",
+    price: 39,
+    description: "Wired Stereo Headsets With Mic",
+    img: "./Images/VIVEFOX Headphones.png",
+    thumbnails: ["./Images/VIVEFOX Headphones.png"],
+    colors: ["#f87171", "#1f2937"],
+    stock: 20,
+    specs: {
+      brand: "VIVEFOX",
+      model: "VIVEFOX Wired Stereo",
+      releaseDate: "2022",
+      modelNumber: "VFX-WH01",
+      headphoneType: "Over-Ear",
+      connectivity: "Wired",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "40",
+      numDrivers: "1",
+      waterResistant: "No",
+      weight: "220",
+      batteryLife: "N/A",
+    },
+  },
+  {
+    name: "JBL TUNE 600BTNC",
+    price: 59,
+    description: "Premium Bone Conduction Open Ear Bluetooth",
+    img: "./Images/JBL TUNE 600BTNC.png",
+    thumbnails: ["./Images/JBL TUNE 600BTNC.png"],
+    colors: ["#1f2937", "#f87171", "#fbbf24"],
+    stock: 15,
+    specs: {
+      brand: "JBL",
+      model: "JBL TUNE 600BTNC",
+      releaseDate: "2021",
+      modelNumber: "TUNE600BTNC",
+      headphoneType: "On-Ear",
+      connectivity: "Wireless",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "32",
+      numDrivers: "1",
+      waterResistant: "No",
+      weight: "160",
+      batteryLife: "12",
+    },
+  },
+  {
+    name: "TAGRY Bluetooth",
+    price: 109,
+    description: "Bluetooth 5.3 wireless headphones",
+    img: "./Images/TAGRY Bluetooth.png",
+    thumbnails: ["./Images/TAGRY Bluetooth.png"],
+    colors: ["#1f2937", "#e5e7eb"],
+    stock: 10,
+    specs: {
+      brand: "TAGRY",
+      model: "TAGRY Bluetooth 5.3",
+      releaseDate: "2023",
+      modelNumber: "TAGRY-BT53",
+      headphoneType: "Over-Ear",
+      connectivity: "Wireless",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "40",
+      numDrivers: "1",
+      waterResistant: "No",
+      weight: "250",
+      batteryLife: "60",
+    },
+  },
+  {
+    name: "Monster MNFLEX",
+    price: 89,
+    description: "Flex Active Noise Cancelling Bluetooth",
+    img: "./Images/Monster MNFLEX.png",
+    thumbnails: ["./Images/Monster MNFLEX.png"],
+    colors: ["#1f2937", "#f87171"],
+    stock: 7,
+    specs: {
+      brand: "Monster",
+      model: "Monster MNFLEX ANC",
+      releaseDate: "2022",
+      modelNumber: "MNFLEX-ANC",
+      headphoneType: "Over-Ear",
+      connectivity: "Wireless",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "40",
+      numDrivers: "1",
+      waterResistant: "No",
+      weight: "270",
+      batteryLife: "22",
+    },
+  },
+  {
+    name: "Mpow CH6",
+    price: 569,
+    description: "Kids Headphones",
+    img: "./Images/Mpow CH6.png",
+    thumbnails: ["./Images/Mpow CH6.png"],
+    colors: ["#60a5fa", "#f87171", "#86efac"],
+    stock: 18,
+    specs: {
+      brand: "Mpow",
+      model: "Mpow CH6 Kids",
+      releaseDate: "2021",
+      modelNumber: "CH6-KIDS",
+      headphoneType: "Over-Ear",
+      connectivity: "Wired",
+      microphone: "Yes",
+      driverType: "Dynamic",
+      driverSize: "40",
+      numDrivers: "1",
+      waterResistant: "No",
+      weight: "180",
+      batteryLife: "N/A",
+    },
+  },
+];
+
+// Save products list to localStorage for product.js to use
+localStorage.setItem("headphoneProducts", JSON.stringify(headphoneProducts));
+
+// Open Product Page
+window.openProduct = function (index) {
+  const product = headphoneProducts[index];
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+  window.location.href = "/shopping-cart/product.html";
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   createIcons({ icons });
 
@@ -139,162 +345,126 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.1 },
   );
   revealElements.forEach((el) => observer.observe(el));
-});
 
-// Category Dropdown Toggle
-const categoryBtn = document.getElementById("category-btn");
-const dropdown = document.getElementById("category-dropdown");
+  // Category Dropdown Toggle
+  const categoryBtn = document.getElementById("category-btn");
+  const dropdown = document.getElementById("category-dropdown");
 
-categoryBtn.addEventListener("click", (e) => {
-  e.stopPropagation(); // Stops the click from instantly triggering the document listener below
-  dropdown.classList.toggle("hidden");
-});
+  if (categoryBtn && dropdown) {
+    categoryBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle("hidden");
+    });
 
-// Close dropdown when clicking outside
-document.addEventListener("click", (e) => {
-  // Check if the click was inside the dropdown menu OR on the category button
-  const isClickInsideDropdown = dropdown.contains(e.target);
-  const isClickOnButton = categoryBtn.contains(e.target);
-
-  // If the user clicked outside of BOTH, safely hide the menu
-  if (!isClickInsideDropdown && !isClickOnButton) {
-    dropdown.classList.add("hidden");
-  }
-});
-
-// 1. Array data matching your actual product grid items
-const productsCatalog = [
-  {
-    name: "Laptop sleeve MacBook",
-    price: "$59.00",
-    img: "./Images/laptop-sleeve.png",
-  },
-  { name: "AirPods Max", price: "$559.00", img: "./Images/airpods.png" },
-  {
-    name: "Flower Laptop Sleeve",
-    price: "$39.00",
-    img: "./Images/flower-sleeve.png",
-  },
-  {
-    name: "Supreme Water Bottle",
-    price: "$19.00",
-    img: "./Images/water-bottle.png",
-  },
-  {
-    name: "MacBook pro 13",
-    price: "$1099.00",
-    img: "./Images/macbook-pro.png",
-  },
-  { name: "HomePod mini", price: "$59.00", img: "./Images/homepod-orange.png" },
-  { name: "Ipad Mini", price: "$539.00", img: "./Images/ipad-mini.png" },
-];
-
-// 2. DOM Elements
-const searchInput = document.getElementById("search-input");
-const searchPanel = document.getElementById("search-results-panel");
-const searchContainer = document.getElementById("search-container");
-const liveResultsContainer = document.getElementById("live-search-results");
-const trendingBox = document.getElementById("trending-box");
-const resultsHeading = document.getElementById("results-heading");
-
-// 3. Render function to build rows dynamically
-function renderSearchResults(filteredItems) {
-  if (filteredItems.length === 0) {
-    liveResultsContainer.innerHTML = `
-      <div class="text-sm text-gray-400 text-center py-4">No matching items found</div>
-    `;
-    return;
+    document.addEventListener("click", (e) => {
+      const isClickInsideDropdown = dropdown.contains(e.target);
+      const isClickOnButton = categoryBtn.contains(e.target);
+      if (!isClickInsideDropdown && !isClickOnButton) {
+        dropdown.classList.add("hidden");
+      }
+    });
   }
 
-  liveResultsContainer.innerHTML = filteredItems
-    .map(
-      (product) => `
-    <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors group">
-      <img src="${product.img}" alt="${product.name}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg" />
-      <div class="flex-1">
-        <p class="font-semibold text-sm text-gray-800 group-hover:text-green-700 transition-colors">${product.name}</p>
-        <p class="text-gray-500 text-xs">${product.price}</p>
-      </div>
-      <i class="w-4 h-4 text-gray-300 group-hover:text-gray-500 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" data-lucide="arrow-up-left"></i>
-    </div>
-  `,
-    )
-    .join("");
+  // Search
+  const productsCatalog = [
+    {
+      name: "Laptop sleeve MacBook",
+      price: "$59.00",
+      img: "./Images/laptop-sleeve.png",
+    },
+    { name: "AirPods Max", price: "$559.00", img: "./Images/airpods.png" },
+    {
+      name: "Flower Laptop Sleeve",
+      price: "$39.00",
+      img: "./Images/flower-sleeve.png",
+    },
+    {
+      name: "Supreme Water Bottle",
+      price: "$19.00",
+      img: "./Images/water-bottle.png",
+    },
+    {
+      name: "MacBook pro 13",
+      price: "$1099.00",
+      img: "./Images/macbook-pro.png",
+    },
+    {
+      name: "HomePod mini",
+      price: "$59.00",
+      img: "./Images/homepod-orange.png",
+    },
+    { name: "Ipad Mini", price: "$539.00", img: "./Images/ipad-mini.png" },
+  ];
 
-  // Re-run lucide to render arrow icons inside dynamically generated rows
-  if (window.lucide) lucide.createIcons();
-}
+  const searchInput = document.getElementById("search-input");
+  const searchPanel = document.getElementById("search-results-panel");
+  const searchContainer = document.getElementById("search-container");
+  const liveResultsContainer = document.getElementById("live-search-results");
+  const trendingBox = document.getElementById("trending-box");
+  const resultsHeading = document.getElementById("results-heading");
 
-// 4. Input listener to filter array content on keypress
-searchInput.addEventListener("input", (e) => {
-  const query = e.target.value.toLowerCase().trim();
-
-  if (query === "") {
-    // Show trending tags block, hide results header, render all items as suggestions
-    trendingBox.classList.remove("hidden");
-    resultsHeading.textContent = "Suggested Products";
-    renderSearchResults(productsCatalog.slice(0, 3)); // show first 3 items by default
-  } else {
-    // User is typing: hide trending block, search full list
-    trendingBox.classList.add("hidden");
-    resultsHeading.textContent = "Matching Results";
-
-    const matches = productsCatalog.filter((product) =>
-      product.name.toLowerCase().includes(query),
-    );
-    renderSearchResults(matches);
-  }
-});
-
-// 5. Visibility Focus Event Controls
-searchInput.addEventListener("focus", () => {
-  searchPanel.classList.remove("hidden");
-  // Trigger default layout if empty upon initial focus
-  if (searchInput.value.trim() === "") {
-    renderSearchResults(productsCatalog.slice(0, 3));
-  }
-});
-
-document.addEventListener("click", (e) => {
-  if (!searchContainer.contains(e.target)) {
-    searchPanel.classList.add("hidden");
-  }
-});
-
-// 6. Make Trending Tags clickable to instantly trigger searches
-document.querySelectorAll(".trending-tag").forEach((tag) => {
-  tag.addEventListener("click", () => {
-    searchInput.value = tag.textContent;
-    searchInput.focus();
-    // Dispatch an input event to force the list calculation programmatically
-    searchInput.dispatchEvent(new Event("input"));
-  });
-});
-
-// Direct Page Redirect Logic for Category Panel
-document.addEventListener("DOMContentLoaded", () => {
-  // 1. Find the Headphone card inside the Category dropdown list
-  // Note: We use a text-based search to find the card safely regardless of your layout structure
-  const categoryCards = document.querySelectorAll(
-    "#category-dropdown a, #category-dropdown div, .dropdown-content div",
-  );
-
-  categoryCards.forEach((card) => {
-    if (card.textContent.includes("Headphone")) {
-      // Make the entire card pointer-interactive
-      card.style.cursor = "pointer";
-
-      // 2. Direct click handler -> goes straight to the page!
-      card.addEventListener("click", (e) => {
-        e.preventDefault(); // Stop any conflicting link bugs
-        window.location.href = "headphones.html";
-      });
+  function renderSearchResults(filteredItems) {
+    if (filteredItems.length === 0) {
+      liveResultsContainer.innerHTML = `
+        <div class="text-sm text-gray-400 text-center py-4">No matching items found</div>
+      `;
+      return;
     }
-  });
-});
 
-// Open Product Page
-window.openProduct = function (product) {
-  localStorage.setItem("selectedProduct", JSON.stringify(product));
-  window.location.href = "./product.html";
-};
+    liveResultsContainer.innerHTML = filteredItems
+      .map(
+        (product) => `
+      <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors group">
+        <img src="${product.img}" alt="${product.name}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg" />
+        <div class="flex-1">
+          <p class="font-semibold text-sm text-gray-800 group-hover:text-green-700 transition-colors">${product.name}</p>
+          <p class="text-gray-500 text-xs">${product.price}</p>
+        </div>
+        <i class="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-all" data-lucide="arrow-up-left"></i>
+      </div>
+    `,
+      )
+      .join("");
+
+    if (window.lucide) lucide.createIcons();
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      if (query === "") {
+        trendingBox.classList.remove("hidden");
+        resultsHeading.textContent = "Suggested Products";
+        renderSearchResults(productsCatalog.slice(0, 3));
+      } else {
+        trendingBox.classList.add("hidden");
+        resultsHeading.textContent = "Matching Results";
+        const matches = productsCatalog.filter((product) =>
+          product.name.toLowerCase().includes(query),
+        );
+        renderSearchResults(matches);
+      }
+    });
+
+    searchInput.addEventListener("focus", () => {
+      searchPanel.classList.remove("hidden");
+      if (searchInput.value.trim() === "") {
+        renderSearchResults(productsCatalog.slice(0, 3));
+      }
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!searchContainer.contains(e.target)) {
+        searchPanel.classList.add("hidden");
+      }
+    });
+
+    document.querySelectorAll(".trending-tag").forEach((tag) => {
+      tag.addEventListener("click", () => {
+        searchInput.value = tag.textContent;
+        searchInput.focus();
+        searchInput.dispatchEvent(new Event("input"));
+      });
+    });
+  }
+});

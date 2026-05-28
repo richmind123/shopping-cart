@@ -202,8 +202,95 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   window.buyNow = function () {
-    window.addToCart();
-    alert("Proceeding to checkout!");
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const existing = cart.find((item) => item.name === product.name);
+    if (existing) {
+      existing.quantity += quantity;
+    } else {
+      cart.push({ ...product, quantity, selectedColor });
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href = "/shopping-cart/checkout.html";
+  };
+
+  // ── Specifications ──
+  if (product.specs) {
+    document.getElementById("spec-title").textContent =
+      `${product.name} Full Specifications`;
+
+    const buildRows = (rows) =>
+      rows
+        .map(
+          ([label, value], i) => `
+      <tr class="${i % 2 === 0 ? "bg-white" : "bg-gray-50"}">
+        <td class="px-6 py-3 text-gray-500 w-1/2">${label}</td>
+        <td class="px-6 py-3 font-medium">${value ?? "—"}</td>
+      </tr>
+    `,
+        )
+        .join("");
+
+    document.getElementById("spec-general").innerHTML = buildRows([
+      ["Brand", product.specs.brand],
+      ["Model", product.specs.model],
+      ["Price", `$${product.price.toFixed(2)}`],
+      ["Release date", product.specs.releaseDate],
+      ["Model Number", product.specs.modelNumber],
+      ["Headphone Type", product.specs.headphoneType],
+      ["Connectivity", product.specs.connectivity],
+    ]);
+
+    document.getElementById("spec-details").innerHTML = buildRows([
+      ["Microphone", product.specs.microphone],
+      ["Driver Type", product.specs.driverType],
+      ["Driver Size (mm)", product.specs.driverSize],
+      ["Number of Drivers", product.specs.numDrivers],
+      ["Water Resistant", product.specs.waterResistant],
+      ["Weight (g)", product.specs.weight],
+      ["Battery Life (Hrs)", product.specs.batteryLife],
+    ]);
+  }
+
+  // ── Similar Items ──
+  const allProducts = JSON.parse(
+    localStorage.getItem("headphoneProducts") || "[]",
+  );
+  const similar = allProducts
+    .filter((p) => p.name !== product.name)
+    .slice(0, 4);
+
+  const similarContainer = document.getElementById("similar-items");
+  if (similar.length) {
+    similarContainer.innerHTML = similar
+      .map(
+        (p) => `
+      <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" onclick='openSimilar(${JSON.stringify(JSON.stringify(p))})'>
+        <div class="relative p-6 flex items-center justify-center h-48">
+          <img src="${p.img}" alt="${p.name}" class="h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
+        </div>
+        <div class="bg-white p-4">
+          <div class="flex justify-between items-center mb-1">
+            <h3 class="font-bold text-sm">${p.name}</h3>
+            <span class="font-bold text-sm">$${p.price.toFixed(2)}</span>
+          </div>
+          <p class="text-gray-500 text-xs mb-3">${p.description}</p>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-5 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+        </div>
+      </div>
+    `,
+      )
+      .join("");
+    createIcons({ icons });
+  }
+
+  window.openSimilar = function (jsonStr) {
+    const p = JSON.parse(jsonStr);
+    localStorage.setItem("selectedProduct", JSON.stringify(p));
+    window.scrollTo(0, 0);
+    location.reload();
   };
 
   // ── Scroll Reveal ──

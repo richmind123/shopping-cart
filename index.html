@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./public/Images/dodge-1.png">
   <title>Shopping Cart</title>
 </head>
 
@@ -33,20 +34,18 @@
   <!-- Main Header -->
   <header class="navbar bg-base-0 shadow-md px-6 py-7 gap-4">
     <div class="flex-1">
-      <a href="./index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer"><img
-          src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart</a>
+      <a href="./index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer"><img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart</a>
     </div>
     <nav class="flex gap-4">
       <!-- Category Dropdown -->
       <div class="relative">
-        <a id="category-btn" class="text-lg font-medium hover:text-primary cursor-pointer flex items-center gap-1">
+        <a id="category-btn" class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer flex items-center gap-1">
           Category
           <i data-lucide="chevron-down" class="w-5 h-5"></i>
         </a>
 
         <!-- Dropdown -->
-        <div id="category-dropdown"
-          class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
+        <div id="category-dropdown" class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
           <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
           <div class="grid grid-cols-2 gap-3">
 
@@ -74,11 +73,9 @@
               </div>
             </div>
 
-            <a href="/shopping-cart/headphones.html"
-              class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white transition-all duration-200 group">
+            <a href="/shopping-cart/headphones.html" class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white transition-all duration-200 group">
               <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center">
-                <img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone"
-                  class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+                <img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div>
                 <p class="font-semibold text-gray-800 group-hover:text-green-700 transition-colors">Headphone</p>
@@ -105,30 +102,24 @@
           </div>
         </div>
       </div>
-      <a class="text-lg font-medium hover:text-primary cursor-pointer">Deals</a>
-      <a class="text-lg font-medium hover:text-primary cursor-pointer">What's New</a>
-      <a class="text-lg font-medium hover:text-primary cursor-pointer">Delivery</a>
+      <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">Deals</a>
+      <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">What's New</a>
+      <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">Delivery</a>
     </nav>
     <div class="flex-1 flex justify-center relative" id="search-container">
-      <label
-        class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
-        <input type="text" id="search-input" placeholder="Search Product"
-          class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
+      <label class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
+        <input type="text" id="search-input" placeholder="Search Product" class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
         <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
       </label>
 
-      <div id="search-results-panel"
-        class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
+      <div id="search-results-panel" class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
 
         <div id="trending-box" class="mb-2">
           <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Trending Searches</p>
           <div class="flex flex-wrap gap-2 mb-2">
-            <span
-              class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">MacBook</span>
-            <span
-              class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">AirPods</span>
-            <span
-              class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">Ipad</span>
+            <span class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">MacBook</span>
+            <span class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">AirPods</span>
+            <span class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">Ipad</span>
           </div>
         </div>
 
@@ -143,18 +134,16 @@
     </div>
     <div class="flex gap-3">
       <i data-lucide="user" class="w-7 h-7"></i>
-      <a class="cursor-pointer  flex text-lg font-medium hover:text-secondary">
+      <a class="cursor-pointer  flex text-lg font-medium hover:text-[#ff5c4c]">
         Account</a>
       <i data-lucide="shopping-cart" class="w-7 h-7"></i>
-      <a class="cursor-pointer  flex text-lg font-medium hover:text-secondary">
+      <a class="cursor-pointer  flex text-lg font-medium hover:text-[#ff5c4c]">
         Cart</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section
-    class="min-h-[500px] lg:min-h-[600px] px-16 py-20 flex items-center justify-between relative overflow-hidden bg-[#eaf5f9]"
-    style="background-image: url('./Images/bg-stage.png'); background-size: contain; background-repeat: no-repeat; background-position: right bottom;">
+  <section class="min-h-[500px] lg:min-h-[600px] px-16 py-20 flex items-center justify-between relative overflow-hidden bg-[#eaf5f9]" style="background-image: url('./Images/bg-stage.png'); background-size: contain; background-repeat: no-repeat; background-position: right bottom;">
 
     <div class="max-w-xl z-10">
       <h1 class="text-5xl lg:text-6xl font-extrabold text-green-900 leading-tight mb-6">
@@ -163,8 +152,7 @@
       <p class="text-xl text-gray-700 leading-relaxed mb-8 max-w-md">
         Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.
       </p>
-      <button
-        class="text-white px-12 py-4 bg-green-950 hover:bg-green-900 transition-colors duration-300 rounded-full font-semibold shadow-md">
+      <button class="text-white px-12 py-4 bg-green-950 hover:bg-green-900 transition-colors duration-300 rounded-full font-semibold shadow-md">
         Learn More
       </button>
     </div>
@@ -177,8 +165,7 @@
       <img src="./Images/luggagetour-min.png" alt="Gadgets" class="w-full h-auto" />
     </div>
 
-    <div class="absolute bottom-[24%] right-[11%] w-[80px] lg:w-[220px] z-20 animate-drop"
-      style="animation-delay: 1.0s;">
+    <div class="absolute bottom-[24%] right-[11%] w-[80px] lg:w-[220px] z-20 animate-drop" style="animation-delay: 1.0s;">
       <img src="./Images/gadgetele.png" alt="Gadgets Stack" class="w-full h-auto" />
     </div>
 
@@ -196,43 +183,37 @@
 
       <!-- Card -->
       <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
-        <img src="./Images/Furniture-min.jpg" alt="Furniture"
-          class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
+        <img src="./Images/Furniture-min.jpg" alt="Furniture" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
         <span class="absolute top-4 left-4 text-white text-2xl font-bold">Furniture</span>
       </div>
 
       <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
-        <img src="./Images/hand bag-min.png" alt="Hand Bag"
-          class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
+        <img src="./Images/hand bag-min.png" alt="Hand Bag" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
         <span class="absolute top-4 left-4 text-white text-2xl font-bold">Hand Bag</span>
       </div>
 
       <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
-        <img src="./Images/books-min.png" alt="Books"
-          class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
+        <img src="./Images/books-min.png" alt="Books" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
         <span class="absolute top-4 left-4 text-white text-2xl font-bold">Books</span>
       </div>
 
       <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
-        <img src="./Images/tech-min.png" alt="Tech"
-          class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
+        <img src="./Images/tech-min.png" alt="Tech" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
         <span class="absolute top-4 left-4 text-white text-2xl font-bold">Tech</span>
       </div>
 
       <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
-        <img src="./Images/sneakers-min.png" alt="Sneakers"
-          class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
+        <img src="./Images/sneakers-min.png" alt="Sneakers" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
         <span class="absolute top-4 left-4 text-white text-2xl font-bold">Sneakers</span>
       </div>
 
       <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
-        <img src="./Images/travel-min.png" alt="Travel"
-          class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
+        <img src="./Images/travel-min.png" alt="Travel" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
         <span class="absolute top-4 left-4 text-white text-2xl font-bold">Travel</span>
       </div>
@@ -249,8 +230,7 @@
 
         <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
           <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-            <img src="./Images/homepad-mini-min.png" alt="HomePod mini"
-              class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
             <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
               <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
             </button>
@@ -269,16 +249,14 @@
               <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
               <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button
-              class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
               to Cart</button>
           </div>
         </div>
 
         <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
           <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-            <img src="./Images/instax mini 9-min.png" alt="Instax Mini 9"
-              class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <img src="./Images/instax mini 9-min.png" alt="Instax Mini 9" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
             <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
               <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
             </button>
@@ -297,16 +275,14 @@
               <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
               <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button
-              class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
               to Cart</button>
           </div>
         </div>
 
         <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
           <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-            <img src="./Images/base camp duffel 02-min.png" alt="Base Camp Duffel M"
-              class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <img src="./Images/base camp duffel 02-min.png" alt="Base Camp Duffel M" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
             <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
               <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
             </button>
@@ -325,16 +301,14 @@
               <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
               <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button
-              class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
               to Cart</button>
           </div>
         </div>
 
         <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
           <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-            <img src="./Images/tomford watch-min.png" alt="Tomford Watch"
-              class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
             <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
               <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
             </button>
@@ -353,16 +327,14 @@
               <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
               <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button
-              class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
               to Cart</button>
           </div>
         </div>
 
         <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
           <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-            <img src="./Images/cabin-min.png" alt="Cabin"
-              class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <img src="./Images/cabin-min.png" alt="Cabin" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
             <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
               <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
             </button>
@@ -381,16 +353,14 @@
               <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
               <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button
-              class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
               to Cart</button>
           </div>
         </div>
 
         <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
           <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-            <img src="./Images/pendleton water bottle-min.png" alt="Pendleton Water Bottle"
-              class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <img src="./Images/pendleton water bottle-min.png" alt="Pendleton Water Bottle" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
             <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
               <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
             </button>
@@ -409,8 +379,7 @@
               <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
               <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button
-              class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
               to Cart</button>
           </div>
         </div>
@@ -426,80 +395,64 @@
     <div class="grid grid-cols-4 gap-4">
 
       <!-- Brand Card -->
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/brand (3)-min.png" alt="Staples"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/brand (3)-min.png" alt="Staples" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Staples</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/sprout-min.png" alt="Sprouts"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/sprout-min.png" alt="Sprouts" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Sprouts</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/grocery-min.png" alt="Grocery outlet"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/grocery-min.png" alt="Grocery outlet" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Grocery outlet</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/mollie-min.png" alt="Mollie stones"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/mollie-min.png" alt="Mollie stones" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Mollie stones</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/sport-min.png" alt="Sports Basement"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/sport-min.png" alt="Sports Basement" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Sports Basement</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/container-min.png" alt="Container Store"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/container-min.png" alt="Container Store" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Container Store</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/target-min.png" alt="Target"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/target-min.png" alt="Target" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Target</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
 
-      <div
-        class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/bevmo-min.png" alt="Bevmo!"
-          class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/bevmo-min.png" alt="Bevmo!" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
           <h3 class="font-bold text-lg">Bevmo!</h3>
           <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
@@ -523,8 +476,7 @@
           <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
         <div class="overflow-hidden h-58">
-          <img src="./Images/sofa-min.png" alt="Furniture"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/sofa-min.png" alt="Furniture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -536,8 +488,7 @@
           <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
         <div class="overflow-hidden h-60">
-          <img src="./Images/book70-min.png" alt="Books"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/book70-min.png" alt="Books" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -549,8 +500,7 @@
           <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
         <div class="overflow-hidden h-60">
-          <img src="./Images/shirt-min.png" alt="Clothes"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/shirt-min.png" alt="Clothes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -562,8 +512,7 @@
           <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
         <div class="overflow-hidden h-60">
-          <img src="./Images/bag & book-min.png" alt="Backpack"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/bag & book-min.png" alt="Backpack" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -580,8 +529,7 @@
       <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer">
         <!-- Image Area -->
         <div class="relative p-6 flex items-center justify-center h-80 ">
-          <img src="./Images/tomford watch-min.png" alt="Tomford Watch"
-            class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120" />
+          <img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
           </button>
@@ -610,8 +558,7 @@
       <!-- Repeat for other cards -->
       <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer">
         <div class="relative p-6 flex items-center justify-center h-80">
-          <img src="./Images/cabin-min.png" alt="cabin-min"
-            class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120" />
+          <img src="./Images/cabin-min.png" alt="cabin-min" class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
           </button>
@@ -637,8 +584,7 @@
 
       <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer">
         <div class="relative p-6 flex items-center justify-center h-80">
-          <img src="./Images/pendleton water bottle-min.png" alt="water bottle-min"
-            class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120 " />
+          <img src="./Images/pendleton water bottle-min.png" alt="water bottle-min" class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120 " />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
           </button>
@@ -668,8 +614,7 @@
   <!-- Cash Back Banner Section -->
   <section class="relative h-[600px] flex items-center justify-end px-16 overflow-hidden">
     <!-- Background Image with Parallax -->
-    <div id="parallax-bg" class="absolute inset-0 scale-110"
-      style="background-image: url('./public/Images/biscount\ banner-min.png'); background-size: cover; background-position: center;">
+    <div id="parallax-bg" class="absolute inset-0 scale-110" style="background-image: url('./public/Images/biscount\ banner-min.png'); background-size: cover; background-position: center;">
     </div>
 
     <!-- Dark Overlay -->
@@ -680,8 +625,7 @@
       <h2 class="text-4xl font-extrabold mb-4">Get 5% Cash Back On $200</h2>
       <p class="text-sm mb-6">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank
         balance.</p>
-      <button
-        class="border-2 border-white text-white hover:bg-white hover:text-green-900 transition-colors duration-300 rounded-full px-8 py-3 font-semibold cursor-pointer">
+      <button class="border-2 border-white text-white hover:bg-white hover:text-green-900 transition-colors duration-300 rounded-full px-8 py-3 font-semibold cursor-pointer">
         Learn More
       </button>
     </div>
@@ -693,22 +637,14 @@
 
     <!-- Filter Tabs -->
     <div class="flex gap-3 mb-8">
-      <button onclick="filterProducts('all')"
-        class="filter-btn active-filter px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Gadgets</button>
-      <button onclick="filterProducts('fashion')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Fashion</button>
-      <button onclick="filterProducts('toys')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Toys</button>
-      <button onclick="filterProducts('education')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Education</button>
-      <button onclick="filterProducts('beauty')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Beauty</button>
-      <button onclick="filterProducts('fitness')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Fitness</button>
-      <button onclick="filterProducts('furniture')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Furniture</button>
-      <button onclick="filterProducts('sneakers')"
-        class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Sneakers</button>
+      <button onclick="filterProducts('all')" class="filter-btn active-filter px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Gadgets</button>
+      <button onclick="filterProducts('fashion')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Fashion</button>
+      <button onclick="filterProducts('toys')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Toys</button>
+      <button onclick="filterProducts('education')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Education</button>
+      <button onclick="filterProducts('beauty')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Beauty</button>
+      <button onclick="filterProducts('fitness')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Fitness</button>
+      <button onclick="filterProducts('furniture')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Furniture</button>
+      <button onclick="filterProducts('sneakers')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Sneakers</button>
     </div>
 
     <!-- Product Grid -->
@@ -717,8 +653,7 @@
       <!-- Product Card -->
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="all">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/leptop sleeve-min.png" alt="Laptop sleeve MacBook mini"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/leptop sleeve-min.png" alt="Laptop sleeve MacBook mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -737,8 +672,7 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
@@ -746,8 +680,7 @@
       <!-- Repeat cards with different data-category values -->
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/airpod max-min.png" alt="AirPods Max Mini 9"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/airpod max-min.png" alt="AirPods Max Mini 9" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -766,16 +699,14 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
 
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="fashion">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/flower leptop sleeve-min.png" alt="Flower Laptop Sleeve"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/flower leptop sleeve-min.png" alt="Flower Laptop Sleeve" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -794,16 +725,14 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
 
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/water pot-min.png" alt="Supreme Water Bottle"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/water pot-min.png" alt="Supreme Water Bottle" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -822,16 +751,14 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
 
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="fashion">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/leptop sleeve macbook-min.png" alt="Laptop sleeve MacBook"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/leptop sleeve macbook-min.png" alt="Laptop sleeve MacBook" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -850,16 +777,14 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
 
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/macbook 13-min.png" alt="Macbook pro 13"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/macbook 13-min.png" alt="Macbook pro 13" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -878,16 +803,14 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
 
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="furniture">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/homepad-mini-min.png" alt="HomePod mini"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -906,16 +829,14 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
 
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
         <div class="relative p-6 flex items-center justify-center h-82">
-          <img src="./Images/ipad mini-min.png" alt="Ipad Mini"
-            class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/ipad mini-min.png" alt="Ipad Mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
           </button>
@@ -934,8 +855,7 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-xs">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
@@ -950,8 +870,7 @@
     <div class="max-w-md">
       <h2 class="text-6xl font-extrabold text-gray-900 mb-4">Get 5% Cash Back</h2>
       <p class="text-xl text-gray-600 mb-8">on Shopcart.com</p>
-      <button
-        class="bg-green-800 hover:bg-green-900 text-white rounded-full px-10 py-4 text-lg font-semibold cursor-pointer transition-colors duration-300">
+      <button class="bg-green-800 hover:bg-green-900 text-white rounded-full px-10 py-4 text-lg font-semibold cursor-pointer transition-colors duration-300">
         Learn More
       </button>
     </div>
@@ -973,8 +892,7 @@
       <div class="cursor-pointer group">
         <!-- Image Area -->
         <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-          <img src="./Images/instax mini 11-min.png" alt="Instax Mini 11"
-            class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
+          <img src="./Images/instax mini 11-min.png" alt="Instax Mini 11" class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
           </button>
@@ -994,8 +912,7 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-sm">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
@@ -1003,8 +920,7 @@
       <!-- Card 2 -->
       <div class="cursor-pointer group">
         <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-          <img src="./Images/watch-black-min.png" alt="Hand Watch"
-            class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
+          <img src="./Images/watch-black-min.png" alt="Hand Watch" class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
           </button>
@@ -1023,8 +939,7 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-sm">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
@@ -1032,8 +947,7 @@
       <!-- Card 3 -->
       <div class="cursor-pointer group">
         <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
-          <img src="./Images/adidas sneakers-min.png" alt="Adidas Sneakers"
-            class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
+          <img src="./Images/adidas sneakers-min.png" alt="Adidas Sneakers" class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
           <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
             <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
           </button>
@@ -1052,8 +966,7 @@
             <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
             <span class="text-gray-500 text-sm">(121)</span>
           </div>
-          <button
-            class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
             to Cart</button>
         </div>
       </div>
@@ -1071,15 +984,13 @@
       <div class="rounded-2xl overflow-hidden cursor-pointer group border border-gray-200">
         <!-- Image -->
         <div class="overflow-hidden h-72">
-          <img src="./Images/furniture village-min.png" alt="Furniture Village"
-            class="object-cover w-full h-full object-center transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/furniture village-min.png" alt="Furniture Village" class="object-cover w-full h-full object-center transition-transform duration-500 group-hover:scale-120" />
         </div>
         <!-- Info -->
         <div class="p-6">
           <h3 class="text-2xl font-bold mb-1">Furniture Village</h3>
           <p class="text-gray-500 mb-4">Delivery with in 24 hours</p>
-          <button
-            class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-8 py-3 font-semibold cursor-pointer transition-colors duration-300">
+          <button class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-8 py-3 font-semibold cursor-pointer transition-colors duration-300">
             Shop Now
           </button>
         </div>
@@ -1089,15 +1000,13 @@
       <div class="rounded-2xl overflow-hidden cursor-pointer group border border-gray-200">
         <!-- Image -->
         <div class="overflow-hidden h-72">
-          <img src="./Images/Fashion world-min.png" alt="Fashion World"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-120" />
+          <img src="./Images/Fashion world-min.png" alt="Fashion World" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-120" />
         </div>
         <!-- Info -->
         <div class="p-6">
           <h3 class="text-2xl font-bold mb-1">Fashion World</h3>
           <p class="text-gray-500 mb-4">Delivery with in 24 hours</p>
-          <button
-            class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-8 py-3 font-semibold cursor-pointer transition-colors duration-300">
+          <button class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-8 py-3 font-semibold cursor-pointer transition-colors duration-300">
             Shop Now
           </button>
         </div>
@@ -1118,12 +1027,10 @@
         <!-- Image with overlapping logo -->
         <div class="relative">
           <div class="overflow-hidden rounded-2xl h-66">
-            <img src="./Images/store one-min.png" alt="Staples"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="./Images/store one-min.png" alt="Staples" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
           <!-- Overlapping brand logo -->
-          <img src="./Images/Ellipse 287.png" alt="Staples logo"
-            class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287.png" alt="Staples logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
 
         <!-- Info -->
@@ -1141,11 +1048,9 @@
       <div class="cursor-pointer group">
         <div class="relative">
           <div class="overflow-hidden rounded-2xl h-66">
-            <img src="./Images/store two-min.png" alt="Now Delivery"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="./Images/store two-min.png" alt="Now Delivery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287-1.png" alt="Now Delivery logo"
-            class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287-1.png" alt="Now Delivery logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
         <div class="pt-10">
           <h3 class="text-xl font-bold mb-1">Now Delivery</h3>
@@ -1161,11 +1066,9 @@
       <div class="cursor-pointer group">
         <div class="relative">
           <div class="overflow-hidden rounded-2xl h-66">
-            <img src="./Images/store three-min.png" alt="Bevmo"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="./Images/store three-min.png" alt="Bevmo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287-2.png" alt="Bevmo logo"
-            class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287-2.png" alt="Bevmo logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
         <div class="pt-10">
           <h3 class="text-xl font-bold mb-1">Bevmo</h3>
@@ -1181,11 +1084,9 @@
       <div class="cursor-pointer group">
         <div class="relative">
           <div class="overflow-hidden rounded-2xl h-66">
-            <img src="./Images/store four-min.png" alt="Quicklly"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="./Images/store four-min.png" alt="Quicklly" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287-3.png" alt="Quicklly logo"
-            class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287-3.png" alt="Quicklly logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
         <div class="pt-10">
           <h3 class="text-xl font-bold mb-1">Quicklly</h3>
@@ -1213,8 +1114,7 @@
           <p class="text-gray-500">Updates on safe Shopping in our Stores</p>
         </div>
         <div class="overflow-hidden h-76">
-          <img src="./Images/faq-min.png" alt="FAQ"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/faq-min.png" alt="FAQ" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -1225,8 +1125,7 @@
           <p class="text-gray-500">Updates on safe Shopping in our Stores</p>
         </div>
         <div class="overflow-hidden h-76">
-          <img src="./Images/onlie payment-min.png" alt="Payment"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/onlie payment-min.png" alt="Payment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -1237,8 +1136,7 @@
           <p class="text-gray-500">Updates on safe Shopping in our Stores</p>
         </div>
         <div class="overflow-hidden h-76">
-          <img src="./Images/home delivery-min.png" alt="Delivery"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <img src="./Images/home delivery-min.png" alt="Delivery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
 
@@ -1262,22 +1160,14 @@
         <!-- Accepted Payments -->
         <h4 class="font-bold mb-4">Accepted Payments</h4>
         <div class="grid grid-cols-4 gap-2">
-          <img src="./Images/stripe.png" alt="Stripe"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/visa.png" alt="Visa"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/Mastercard.png" alt="Mastercard"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/Amazon.png" alt="Amazon"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/Klarna.png" alt="Klarna"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/PayPal.png" alt="PayPal"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/ApplePay.png" alt="Apple Pay"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-          <img src="./Images/GooglePay.png" alt="Google Pay"
-            class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/stripe.png" alt="Stripe" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/visa.png" alt="Visa" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Mastercard.png" alt="Mastercard" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Amazon.png" alt="Amazon" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Klarna.png" alt="Klarna" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/PayPal.png" alt="PayPal" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/ApplePay.png" alt="Apple Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/GooglePay.png" alt="Google Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
         </div>
       </div>
 
@@ -1285,47 +1175,33 @@
       <div>
         <h4 class="font-bold text-lg mb-6">Department</h4>
         <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Fashion</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Education Product</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Frozen Food</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Beverages</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Organic Grocery</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Office Supplies</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Beauty Products</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Books</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Electronics & Gadget</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Travel Accessories</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Fitness</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Sneakers</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Toys</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Furniture</li>
         </ul>
       </div>
@@ -1334,32 +1210,23 @@
       <div>
         <h4 class="font-bold text-lg mb-6">About Us</h4>
         <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             About Shopcart</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Careers</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             News & Blog</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Help</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Press Center</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Shop By Location</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Shopcart Brands</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Affiliate & Partners</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Ideas & Guides</li>
         </ul>
       </div>
@@ -1368,20 +1235,15 @@
       <div>
         <h4 class="font-bold text-lg mb-6">Services</h4>
         <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Gift Card</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Mobile App</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Shipping & Delivery</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Order Pickup</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Account Signup</li>
         </ul>
       </div>
@@ -1390,23 +1252,17 @@
       <div>
         <h4 class="font-bold text-lg mb-6">Help</h4>
         <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Shopcart Help</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Returns</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Track Orders</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Contact Us</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Feedback</li>
-          <li
-            class="hover:text-green-700 transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
             Security & Fraud</li>
         </ul>
       </div>
@@ -1414,8 +1270,32 @@
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-200 mt-12 pt-6 text-center text-gray-400 text-sm">
-      © 2024 Shopcart. All rights reserved.
+    <div class="border-t border-gray-100 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
+
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-9 gap-y-2">
+
+        <a href="#" class="flex items-center gap-1.5 group">
+          <i data-lucide="briefcase-business" class="w-7 h-7 text-rose-400"></i>
+          <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Become Seller</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-1.5">
+          <i data-lucide="gift" class="w-7 h-7 text-rose-400"></i>
+          <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Gift Cards</span>
+        </a>
+
+        <a href="#" class="flex items-center gap-1.5">
+          <i data-lucide="help-circle" class="w-7 h-7 text-rose-400"></i>
+          <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Help Center</span>
+        </a>
+
+        <a href="#" class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Terms of Service</a>
+        <a href="#" class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Privacy & Policy</a>
+      </div>
+
+      <p class="text-center md:text-right text-lg font-semibold">
+        © 2026 Shopcart. All rights reserved. | Made with ❤️ by <span class="text-green-700 font-medium">Musemind</span>
+      </p>
     </div>
 
   </footer>

@@ -10,6 +10,7 @@ export default defineConfig({
         main: "index.html",
         headphones: "headphones.html",
         product: "product.html",
+        checkout: "checkout.html",
       },
     },
   },
