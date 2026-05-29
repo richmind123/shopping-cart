@@ -10,20 +10,19 @@
 
 <body>
   <!-- Top Bar -->
-  <div class="bg-green-900 text-white text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-3
-              flex flex-col sm:flex-row justify-between items-center gap-1 sm:gap-0">
-    <span class="flex items-center gap-2">
-      <i data-lucide="phone" class="w-3 h-3 sm:w-4 sm:h-4"></i>
+  <div class="bg-green-900 text-white text-md px-4 sm:px-6 py-3 flex flex-wrap gap-y-2 justify-center lg:justify-between items-center text-center">
+    <span class="flex items-center justify-center gap-2 w-full sm:w-auto">
+      <i data-lucide="phone" class="w-4 h-4"></i>
       +2348160093540
     </span>
-    <span class="hidden sm:block">Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
-    <div class="flex gap-3 sm:gap-4">
-      <select class="bg-green-900 text-white border-none outline-none text-xs sm:text-sm">
+    <span class="hidden lg:inline">Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
+    <div class="flex justify-center gap-4 w-full sm:w-auto">
+      <select class="bg-green-900 text-white border-none outline-none">
         <option>Eng</option>
         <option>Fra</option>
         <option>Spa</option>
       </select>
-      <select class="bg-green-900 text-white border-none outline-none text-xs sm:text-sm">
+      <select class="bg-green-900 text-white border-none outline-none">
         <option>Location</option>
         <option>Lagos</option>
         <option>London</option>
@@ -31,25 +30,28 @@
       </select>
     </div>
   </div>
+  <header class="navbar bg-base-0 shadow-md px-6 py-4 lg:py-7 flex flex-col lg:flex-row justify-between items-center gap-4">
 
-  <!-- Main Header -->
-  <header class="navbar bg-base-0 shadow-md px-4 sm:px-6 py-4 sm:py-7 gap-2 sm:gap-4">
-
-    <!-- Logo -->
-    <div class="flex-1">
-      <a href="./index.html" class="text-xl sm:text-3xl gap-1.5 sm:gap-2 font-extrabold flex items-center text-green-700 cursor-pointer">
-        <img src="./Images/logo.png" alt="Shopcart Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
-        Shopcart
+    <div class="w-full lg:w-auto flex items-center justify-between">
+      <a href="./index.html" class="text-2xl sm:text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer">
+        <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" />
+        <span>Shopcart</span>
       </a>
+
+      <button id="hamburger" class="lg:hidden p-2 text-green-700 focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
     </div>
 
-    <!-- Desktop Nav (hidden on mobile) -->
     <nav class="hidden lg:flex gap-4">
       <div class="relative">
         <a id="category-btn" class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer flex items-center gap-1">
           Category
           <i data-lucide="chevron-down" class="w-5 h-5"></i>
         </a>
+
         <div id="category-dropdown" class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
           <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
           <div class="grid grid-cols-2 gap-3">
@@ -105,12 +107,12 @@
       <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">Delivery</a>
     </nav>
 
-    <!-- Search (desktop only) -->
-    <div class="hidden lg:flex flex-1 justify-center relative" id="search-container">
-      <label class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
+    <div class="w-full lg:max-w-md relative lg:flex-1 flex justify-center" id="search-container">
+      <label class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
         <input type="text" id="search-input" placeholder="Search Product" class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
         <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
       </label>
+
       <div id="search-results-panel" class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
         <div id="trending-box" class="mb-2">
           <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Trending Searches</p>
@@ -127,7 +129,6 @@
       </div>
     </div>
 
-    <!-- Account + Cart (desktop only) -->
     <div class="hidden lg:flex gap-3">
       <i data-lucide="user" class="w-7 h-7"></i>
       <a class="cursor-pointer flex text-lg font-medium hover:text-[#ff5c4c]">Account</a>
@@ -135,243 +136,247 @@
       <a class="cursor-pointer flex text-lg font-medium hover:text-[#ff5c4c]">Cart</a>
     </div>
 
-    <!-- Hamburger (mobile only) -->
-    <button id="mobile-menu-btn" class="lg:hidden p-1.5 rounded-lg hover:bg-gray-100 transition-colors flex-shrink-0">
-      <i data-lucide="menu" class="w-6 h-6"></i>
-    </button>
   </header>
 
-  <!-- Mobile Drawer Overlay -->
-  <div id="mobile-drawer-overlay" class="fixed inset-0 bg-black/50 z-[100] hidden" onclick="this.classList.add('hidden'); document.getElementById('mobile-drawer').classList.add('translate-x-full');">
-  </div>
-
-  <!-- Mobile Drawer Panel -->
-  <div id="mobile-drawer" class="fixed top-0 right-0 h-full w-72 bg-white z-[101] shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
-    <div class="flex items-center justify-between px-5 py-5 border-b border-gray-100">
-      <a href="./index.html" class="flex items-center gap-2 font-extrabold text-green-700 text-xl">
-        <img src="./Images/logo.png" alt="Shopcart" class="w-8 h-8 object-contain" /> Shopcart
-      </a>
-      <button onclick="document.getElementById('mobile-drawer-overlay').classList.add('hidden'); document.getElementById('mobile-drawer').classList.add('translate-x-full');" class="p-1.5 hover:bg-gray-100 rounded-lg">
-        <i data-lucide="x" class="w-5 h-5"></i>
-      </button>
-    </div>
-
-    <!-- Mobile Search -->
-    <div class="px-5 py-3 border-b border-gray-100">
-      <label class="flex items-center gap-2 w-full h-10 px-3 border border-gray-200 rounded-full bg-gray-50 focus-within:border-green-700 focus-within:bg-white transition-colors">
-        <i data-lucide="search" class="w-4 h-4 text-gray-400 flex-shrink-0"></i>
-        <input type="text" placeholder="Search Product" class="grow bg-transparent outline-none text-sm placeholder:text-gray-400" autocomplete="off" />
-      </label>
-    </div>
-
-    <nav class="flex flex-col px-5 py-3 gap-1 flex-1 overflow-y-auto">
-      <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-gray-50 font-medium cursor-pointer text-gray-700 hover:text-[#ff5c4c] transition-colors border-b border-gray-50">
-        <i data-lucide="grid" class="w-5 h-5 text-gray-400"></i> Category
-      </a>
-      <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-gray-50 font-medium cursor-pointer text-gray-700 hover:text-[#ff5c4c] transition-colors border-b border-gray-50">
-        <i data-lucide="tag" class="w-5 h-5 text-gray-400"></i> Deals
-      </a>
-      <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-gray-50 font-medium cursor-pointer text-gray-700 hover:text-[#ff5c4c] transition-colors border-b border-gray-50">
-        <i data-lucide="sparkles" class="w-5 h-5 text-gray-400"></i> What's New
-      </a>
-      <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-gray-50 font-medium cursor-pointer text-gray-700 hover:text-[#ff5c4c] transition-colors border-b border-gray-50">
-        <i data-lucide="truck" class="w-5 h-5 text-gray-400"></i> Delivery
-      </a>
-      <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-gray-50 font-medium cursor-pointer text-gray-700 hover:text-[#ff5c4c] transition-colors border-b border-gray-50">
-        <i data-lucide="user" class="w-5 h-5 text-gray-400"></i> Account
-      </a>
-      <a class="flex items-center gap-3 py-3 px-3 rounded-xl hover:bg-gray-50 font-medium cursor-pointer text-gray-700 hover:text-[#ff5c4c] transition-colors">
-        <i data-lucide="shopping-cart" class="w-5 h-5 text-gray-400"></i> Cart
-      </a>
-    </nav>
-    <div class="px-5 py-4 border-t border-gray-100 bg-green-50">
-      <p class="text-sm font-semibold text-green-900">🏷️ Get 50% Off Selected Items</p>
-      <a class="text-xs text-green-700 font-bold cursor-pointer">Shop Now →</a>
-    </div>
-  </div>
-
   <!-- Hero Section -->
-  <section class="min-h-[300px] sm:min-h-[440px] lg:min-h-[600px] px-5 sm:px-10 lg:px-16 py-10 sm:py-16 lg:py-20
-                  flex items-center justify-between relative overflow-hidden bg-[#eaf5f9]" style="background-image: url('./Images/bg-stage.png'); background-size: contain; background-repeat: no-repeat; background-position: right bottom;">
-    <div class="max-w-xs sm:max-w-md lg:max-w-xl z-10 relative">
-      <h1 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-green-900 leading-tight mb-4 sm:mb-6">
+  <section class="min-h-[500px] lg:min-h-[600px] px-16 py-20 flex items-center justify-between relative overflow-hidden bg-[#eaf5f9]" style="background-image: url('./Images/bg-stage.png'); background-size: contain; background-repeat: no-repeat; background-position: right bottom;">
+
+    <div class="max-w-xl z-10">
+      <h1 class="text-5xl lg:text-6xl font-extrabold text-green-900 leading-tight mb-6">
         Shopping And Department Store.
       </h1>
-      <p class="text-sm sm:text-lg lg:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8 max-w-xs sm:max-w-md">
+      <p class="text-xl text-gray-700 leading-relaxed mb-8 max-w-md">
         Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.
       </p>
-      <button class="text-white px-8 sm:px-10 lg:px-12 py-3 sm:py-4 bg-green-950 hover:bg-green-900 transition-colors duration-300 rounded-full font-semibold shadow-md text-sm sm:text-base">
+      <button class="text-white px-12 py-4 bg-green-950 hover:bg-green-900 transition-colors duration-300 rounded-full font-semibold shadow-md">
         Learn More
       </button>
     </div>
-    <div class="absolute bottom-[20%] right-[34%] w-20 sm:w-36 lg:w-54 z-10 animate-drop hidden sm:block" style="animation-delay: 0.3s;">
+
+    <div class="absolute bottom-[20%] right-[34%] w-54 z-10 animate-drop" style="animation-delay: 0.3s;">
       <img src="./Images/snaks-min.png" alt="Snacks" class="w-full h-auto" />
     </div>
-    <div class="absolute bottom-[38%] right-[25%] w-16 sm:w-28 lg:w-44 z-10 animate-drop hidden sm:block" style="animation-delay: 0.7s;">
+
+    <div class="absolute bottom-[38%] right-[25%] w-44 z-10 animate-drop" style="animation-delay: 0.7s;">
       <img src="./Images/luggagetour-min.png" alt="Gadgets" class="w-full h-auto" />
     </div>
-    <div class="absolute bottom-[24%] right-[4%] sm:right-[11%] w-14 sm:w-20 lg:w-[220px] z-20 animate-drop" style="animation-delay: 1.0s;">
+
+    <div class="absolute bottom-[24%] right-[11%] w-[80px] lg:w-[220px] z-20 animate-drop" style="animation-delay: 1.0s;">
       <img src="./Images/gadgetele.png" alt="Gadgets Stack" class="w-full h-auto" />
     </div>
-    <div class="absolute top-[14%] right-[6%] w-14 sm:w-24 lg:w-59 z-10 animate-drop hidden sm:block" style="animation-delay: 1.1s;">
+
+    <div class="absolute top-[14%] right-[6%] w-59 z-10 animate-drop" style="animation-delay: 1.1s;">
       <img src="./Images/other-min.png" alt="Bags" class="w-full h-auto" />
     </div>
+
   </section>
 
   <!-- Top Categories Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Shop Our Top Categories</h2>
-    <div class="flex gap-4 sm:gap-6 lg:gap-10 overflow-x-auto pb-2" style="-webkit-overflow-scrolling:touch;">
-      <div class="relative min-w-[150px] sm:min-w-[180px] lg:min-w-[205px] h-48 sm:h-60 lg:h-68 rounded-2xl overflow-hidden cursor-pointer category-card flex-shrink-0">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Shop Our Top Categories</h2>
+
+    <div class="flex gap-10 overflow-x-auto">
+
+      <!-- Card -->
+      <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
         <img src="./Images/Furniture-min.jpg" alt="Furniture" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <span class="absolute top-3 left-3 sm:top-4 sm:left-4 text-white text-lg sm:text-2xl font-bold">Furniture</span>
+        <span class="absolute top-4 left-4 text-white text-2xl font-bold">Furniture</span>
       </div>
-      <div class="relative min-w-[150px] sm:min-w-[180px] lg:min-w-[205px] h-48 sm:h-60 lg:h-68 rounded-2xl overflow-hidden cursor-pointer category-card flex-shrink-0">
+
+      <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
         <img src="./Images/hand bag-min.png" alt="Hand Bag" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <span class="absolute top-3 left-3 sm:top-4 sm:left-4 text-white text-lg sm:text-2xl font-bold">Hand Bag</span>
+        <span class="absolute top-4 left-4 text-white text-2xl font-bold">Hand Bag</span>
       </div>
-      <div class="relative min-w-[150px] sm:min-w-[180px] lg:min-w-[205px] h-48 sm:h-60 lg:h-68 rounded-2xl overflow-hidden cursor-pointer category-card flex-shrink-0">
+
+      <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
         <img src="./Images/books-min.png" alt="Books" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <span class="absolute top-3 left-3 sm:top-4 sm:left-4 text-white text-lg sm:text-2xl font-bold">Books</span>
+        <span class="absolute top-4 left-4 text-white text-2xl font-bold">Books</span>
       </div>
-      <div class="relative min-w-[150px] sm:min-w-[180px] lg:min-w-[205px] h-48 sm:h-60 lg:h-68 rounded-2xl overflow-hidden cursor-pointer category-card flex-shrink-0">
+
+      <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
         <img src="./Images/tech-min.png" alt="Tech" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <span class="absolute top-3 left-3 sm:top-4 sm:left-4 text-white text-lg sm:text-2xl font-bold">Tech</span>
+        <span class="absolute top-4 left-4 text-white text-2xl font-bold">Tech</span>
       </div>
-      <div class="relative min-w-[150px] sm:min-w-[180px] lg:min-w-[205px] h-48 sm:h-60 lg:h-68 rounded-2xl overflow-hidden cursor-pointer category-card flex-shrink-0">
+
+      <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
         <img src="./Images/sneakers-min.png" alt="Sneakers" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <span class="absolute top-3 left-3 sm:top-4 sm:left-4 text-white text-lg sm:text-2xl font-bold">Sneakers</span>
+        <span class="absolute top-4 left-4 text-white text-2xl font-bold">Sneakers</span>
       </div>
-      <div class="relative min-w-[150px] sm:min-w-[180px] lg:min-w-[205px] h-48 sm:h-60 lg:h-68 rounded-2xl overflow-hidden cursor-pointer category-card flex-shrink-0">
+
+      <div class="relative min-w-[205px] h-68 rounded-2xl overflow-hidden cursor-pointer category-card">
         <img src="./Images/travel-min.png" alt="Travel" class="w-full h-full object-cover transition-transform duration-300 hover:scale-150" />
         <div class="absolute inset-0 bg-black/20"></div>
-        <span class="absolute top-3 left-3 sm:top-4 sm:left-4 text-white text-lg sm:text-2xl font-bold">Travel</span>
+        <span class="absolute top-4 left-4 text-white text-2xl font-bold">Travel</span>
       </div>
+
     </div>
   </section>
 
   <!-- Best Deals Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Todays Best Deals For You!</h2>
-    <div class="overflow-x-scroll cursor-grab active:cursor-grabbing" id="deals-slider" style="-webkit-overflow-scrolling:touch;">
-      <div class="flex gap-4 sm:gap-7" id="deals-track" style="width: max-content;">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Todays Best Deals For You!</h2>
 
-        <div class="deals-card w-[260px] sm:w-[360px] lg:w-[459px] flex-shrink-0 cursor-pointer group">
-          <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-52 sm:h-64 lg:h-80 overflow-hidden">
-            <img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-            <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+    <div class="overflow-x-scroll cursor-grab active:cursor-grabbing" id="deals-slider">
+      <div class="flex gap-7" id="deals-track" style="width: max-content;">
+
+        <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+          <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+            <img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+              <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+            </button>
           </div>
-          <div class="pt-3 sm:pt-4">
+          <div class="pt-4">
             <div class="flex justify-between items-center mb-1">
-              <h3 class="text-base sm:text-lg font-bold">HomePod mini</h3>
-              <span class="font-bold text-sm sm:text-base">$239.<sup>00</sup></span>
+              <h3 class="text-lg font-bold">HomePod mini</h3>
+              <span class="font-bold">$239.<sup>00</sup></span>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm mb-2">Table with air purifier, stained veneer/black</p>
-            <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4">
-              <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i>
-              <span class="text-gray-500 text-xs sm:text-sm">(121)</span>
+            <p class="text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+              to Cart</button>
           </div>
         </div>
 
-        <div class="deals-card w-[260px] sm:w-[360px] lg:w-[459px] flex-shrink-0 cursor-pointer group">
-          <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-52 sm:h-64 lg:h-80 overflow-hidden">
-            <img src="./Images/instax mini 9-min.png" alt="Instax Mini 9" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-            <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+          <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+            <img src="./Images/instax mini 9-min.png" alt="Instax Mini 9" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+              <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+            </button>
           </div>
-          <div class="pt-3 sm:pt-4">
+          <div class="pt-4">
             <div class="flex justify-between items-center mb-1">
-              <h3 class="text-base sm:text-lg font-bold">Instax Mini 9</h3>
-              <span class="font-bold text-sm sm:text-base">$99.<sup>00</sup></span>
+              <h3 class="text-lg font-bold">Instax Mini 9</h3>
+              <span class="font-bold">$99.<sup>00</sup></span>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
-            <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4">
-              <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i>
-              <span class="text-gray-500 text-xs sm:text-sm">(121)</span>
+            <p class="text-gray-500 text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+              to Cart</button>
           </div>
         </div>
 
-        <div class="deals-card w-[260px] sm:w-[360px] lg:w-[459px] flex-shrink-0 cursor-pointer group">
-          <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-52 sm:h-64 lg:h-80 overflow-hidden">
-            <img src="./Images/base camp duffel 02-min.png" alt="Base Camp Duffel M" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-            <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+          <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+            <img src="./Images/base camp duffel 02-min.png" alt="Base Camp Duffel M" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+              <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+            </button>
           </div>
-          <div class="pt-3 sm:pt-4">
+          <div class="pt-4">
             <div class="flex justify-between items-center mb-1">
-              <h3 class="text-base sm:text-lg font-bold">Base Camp Duffel M</h3>
-              <span class="font-bold text-sm sm:text-base">$159.<sup>00</sup></span>
+              <h3 class="text-lg font-bold">Base Camp Duffel M</h3>
+              <span class="font-bold">$159.<sup>00</sup></span>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm mb-2">Table with air purifier, stained veneer/black</p>
-            <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4">
-              <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i>
-              <span class="text-gray-500 text-xs sm:text-sm">(121)</span>
+            <p class="text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+              to Cart</button>
           </div>
         </div>
 
-        <div class="deals-card w-[260px] sm:w-[360px] lg:w-[459px] flex-shrink-0 cursor-pointer group">
-          <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-52 sm:h-64 lg:h-80 overflow-hidden">
-            <img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-            <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+          <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+            <img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+              <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+            </button>
           </div>
-          <div class="pt-3 sm:pt-4">
+          <div class="pt-4">
             <div class="flex justify-between items-center mb-1">
-              <h3 class="text-base sm:text-lg font-bold">Tomford Watch</h3>
-              <span class="font-bold text-sm sm:text-base">$39.<sup>00</sup></span>
+              <h3 class="text-lg font-bold">Tomford Watch</h3>
+              <span class="font-bold">$39.<sup>00</sup></span>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm mb-2">Table with air purifier, stained veneer/black</p>
-            <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4">
-              <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i>
-              <span class="text-gray-500 text-xs sm:text-sm">(121)</span>
+            <p class="text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+              to Cart</button>
           </div>
         </div>
 
-        <div class="deals-card w-[260px] sm:w-[360px] lg:w-[459px] flex-shrink-0 cursor-pointer group">
-          <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-52 sm:h-64 lg:h-80 overflow-hidden">
-            <img src="./Images/cabin-min.png" alt="Cabin" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-            <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+          <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+            <img src="./Images/cabin-min.png" alt="Cabin" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+              <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+            </button>
           </div>
-          <div class="pt-3 sm:pt-4">
+          <div class="pt-4">
             <div class="flex justify-between items-center mb-1">
-              <h3 class="text-base sm:text-lg font-bold">Cabin</h3>
-              <span class="font-bold text-sm sm:text-base">$239.<sup>00</sup></span>
+              <h3 class="text-lg font-bold">Cabin</h3>
+              <span class="font-bold">$239.<sup>00</sup></span>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
-            <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4">
-              <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i>
-              <span class="text-gray-500 text-xs sm:text-sm">(121)</span>
+            <p class="text-gray-500 text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+              to Cart</button>
           </div>
         </div>
 
-        <div class="deals-card w-[260px] sm:w-[360px] lg:w-[459px] flex-shrink-0 cursor-pointer group">
-          <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-52 sm:h-64 lg:h-80 overflow-hidden">
-            <img src="./Images/pendleton water bottle-min.png" alt="Pendleton Water Bottle" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-            <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+          <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+            <img src="./Images/pendleton water bottle-min.png" alt="Pendleton Water Bottle" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" />
+            <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+              <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+            </button>
           </div>
-          <div class="pt-3 sm:pt-4">
+          <div class="pt-4">
             <div class="flex justify-between items-center mb-1">
-              <h3 class="text-base sm:text-lg font-bold">Pendleton Water Bottle</h3>
-              <span class="font-bold text-sm sm:text-base">$89.<sup>00</sup></span>
+              <h3 class="text-lg font-bold">Pendleton Water Bottle</h3>
+              <span class="font-bold">$89.<sup>00</sup></span>
             </div>
-            <p class="text-gray-500 text-xs sm:text-sm mb-2">Table with air purifier, stained veneer/black</p>
-            <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4">
-              <i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i>
-              <span class="text-gray-500 text-xs sm:text-sm">(121)</span>
+            <p class="text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+            <div class="flex items-center gap-1 text-green-400 mb-4">
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+              <span class="text-gray-500 text-sm">(121)</span>
             </div>
-            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-4 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+            <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+              to Cart</button>
           </div>
         </div>
 
@@ -380,591 +385,918 @@
   </section>
 
   <!-- Choose By Brand Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Choose By Brand</h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/brand (3)-min.png" alt="Staples" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Choose By Brand</h2>
+
+    <div class="grid grid-cols-4 gap-4">
+
+      <!-- Brand Card -->
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/brand (3)-min.png" alt="Staples" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg">Staples</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Staples</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/sprout-min.png" alt="Sprouts" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/sprout-min.png" alt="Sprouts" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg">Sprouts</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Sprouts</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/grocery-min.png" alt="Grocery outlet" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/grocery-min.png" alt="Grocery outlet" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg truncate">Grocery outlet</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Grocery outlet</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/mollie-min.png" alt="Mollie stones" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/mollie-min.png" alt="Mollie stones" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg truncate">Mollie stones</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Mollie stones</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/sport-min.png" alt="Sports Basement" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/sport-min.png" alt="Sports Basement" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg truncate">Sports Basement</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Sports Basement</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/container-min.png" alt="Container Store" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/container-min.png" alt="Container Store" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg truncate">Container Store</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Container Store</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/target-min.png" alt="Target" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/target-min.png" alt="Target" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg">Target</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Target</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
-      <div class="flex items-center gap-3 bg-gray-100 py-5 sm:py-7 rounded-2xl p-3 sm:p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
-        <img src="./Images/bevmo-min.png" alt="Bevmo!" class="w-11 h-11 sm:w-16 sm:h-16 rounded-full object-cover flex-shrink-0" />
+
+      <div class="flex items-center gap-4 bg-gray-100 py-7 rounded-2xl p-4 cursor-pointer hover:shadow-md transition-shadow duration-300">
+        <img src="./Images/bevmo-min.png" alt="Bevmo!" class="w-16 h-16 rounded-full object-cover transition-transform duration-300 hover:scale-120" />
         <div>
-          <h3 class="font-bold text-sm sm:text-lg">Bevmo!</h3>
-          <p class="text-gray-500 text-xs sm:text-sm">Delivery within 24 hours</p>
+          <h3 class="font-bold text-lg">Bevmo!</h3>
+          <p class="text-gray-500 text-sm">Delivery with in 24 hours</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Get Up To 70% Off Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Get Up To 70% Off</h2>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Get Up To 70% Off</h2>
+
+    <div class="grid grid-cols-4 gap-4">
+
+      <!-- Card 1 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer bg-amber-50 group">
-        <div class="p-4 sm:p-6">
-          <p class="text-sm sm:text-lg font-medium mb-2 sm:mb-4">Save</p>
-          <p class="text-3xl sm:text-5xl font-extrabold text-amber-500 mb-2 sm:mb-6">$<span>100</span></p>
-          <p class="text-xs sm:text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
+        <div class="p-6 h-55">
+          <p class="text-lg font-medium mb-4">Save</p>
+          <p class="text-5xl font-extrabold text-amber-500 mb-6">$<span>100</span></p>
+          <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
-        <div class="overflow-hidden h-32 sm:h-44 lg:h-58">
+        <div class="overflow-hidden h-58">
           <img src="./Images/sofa-min.png" alt="Furniture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer bg-rose-50 group">
-        <div class="p-4 sm:p-6">
-          <p class="text-sm sm:text-lg font-medium mb-2 sm:mb-4">Save</p>
-          <p class="text-3xl sm:text-5xl font-extrabold text-rose-500 mb-2 sm:mb-6">$<span>29</span></p>
-          <p class="text-xs sm:text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
+        <div class="p-6 h-55">
+          <p class="text-lg font-medium mb-4">Save</p>
+          <p class="text-5xl font-extrabold text-rose-500 mb-6">$<span>29</span></p>
+          <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
-        <div class="overflow-hidden h-32 sm:h-44 lg:h-60">
+        <div class="overflow-hidden h-60">
           <img src="./Images/book70-min.png" alt="Books" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer bg-stone-100 group">
-        <div class="p-4 sm:p-6">
-          <p class="text-sm sm:text-lg font-medium mb-2 sm:mb-4">Save</p>
-          <p class="text-3xl sm:text-5xl font-extrabold text-amber-700 mb-2 sm:mb-6">$<span>67</span></p>
-          <p class="text-xs sm:text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
+        <div class="p-6 h-55">
+          <p class="text-lg font-medium mb-4">Save</p>
+          <p class="text-5xl font-extrabold text-amber-700 mb-6">$<span>67</span></p>
+          <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
-        <div class="overflow-hidden h-32 sm:h-44 lg:h-60">
+        <div class="overflow-hidden h-60">
           <img src="./Images/shirt-min.png" alt="Clothes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
+      <!-- Card 4 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer bg-teal-50 group">
-        <div class="p-4 sm:p-6">
-          <p class="text-sm sm:text-lg font-medium mb-2 sm:mb-4">Save</p>
-          <p class="text-3xl sm:text-5xl font-extrabold text-teal-600 mb-2 sm:mb-6">$<span>59</span></p>
-          <p class="text-xs sm:text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
+        <div class="p-6 h-55">
+          <p class="text-lg font-medium mb-4">Save</p>
+          <p class="text-5xl font-extrabold text-teal-600 mb-6">$<span>59</span></p>
+          <p class="text-sm text-gray-600">Explore Our Furniture & Home Furnishing Range</p>
         </div>
-        <div class="overflow-hidden h-32 sm:h-44 lg:h-60">
+        <div class="overflow-hidden h-60">
           <img src="./Images/bag & book-min.png" alt="Backpack" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Weekly Popular Products -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Weekly Popular Products</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Weekly Popular Products</h2>
+
+    <div class="grid grid-cols-3 gap-6">
+
+      <!-- Card -->
       <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer">
-        <div class="relative p-4 sm:p-6 flex items-center justify-center h-60 sm:h-72 lg:h-80">
-          <img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-full h-full object-contain transition-transform duration-300 hover:scale-110" />
-          <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <!-- Image Area -->
+        <div class="relative p-6 flex items-center justify-center h-80 ">
+          <img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-3 sm:p-4">
+
+        <!-- Info Area -->
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="text-base sm:text-lg font-bold">Tomford Watch</h3><span class="font-bold text-sm sm:text-base">$39.<sup>00</sup></span>
+            <h3 class="text-lg font-bold">Tomford Watch</h3>
+            <span class="font-bold">$39.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Table with air purifier, stained veneer/black</p>
-          <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4"><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><span class="text-gray-500 text-xs sm:text-sm">(121)</span></div>
-          <button class="btn btn-outline hover:bg-green-900 hover:text-white rounded-full w-36 sm:w-40 text-sm font-semibold">Add to Cart</button>
+          <p class="text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+          <div class="flex items-center gap-1 text-green-400 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-sm">(121)</span>
+          </div>
+          <button class="btn btn-outline hover:bg-green-900 hover:text-white rounded-full w-40 font-semibold">Add to
+            Cart</button>
         </div>
       </div>
+
+      <!-- Repeat for other cards -->
       <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer">
-        <div class="relative p-4 sm:p-6 flex items-center justify-center h-60 sm:h-72 lg:h-80">
-          <img src="./Images/cabin-min.png" alt="cabin-min" class="w-full h-full object-contain transition-transform duration-300 hover:scale-110" />
-          <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-80">
+          <img src="./Images/cabin-min.png" alt="cabin-min" class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-3 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="text-base sm:text-lg font-bold">Cabin</h3><span class="font-bold text-sm sm:text-base">$239.<sup>00</sup></span>
+            <h3 class="text-lg font-bold">Cabin</h3>
+            <span class="font-bold">$239.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
-          <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4"><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><span class="text-gray-500 text-xs sm:text-sm">(121)</span></div>
-          <button class="btn btn-outline hover:bg-green-900 hover:text-white rounded-full w-36 sm:w-40 text-sm font-semibold">Add to Cart</button>
+          <p class="text-gray-500 text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
+          <div class="flex items-center gap-1 text-green-400 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-sm">(121)</span>
+          </div>
+          <button class="btn btn-outline hover:bg-green-900 hover:text-white rounded-full w-40 font-semibold">Add to
+            Cart</button>
         </div>
       </div>
-      <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer sm:col-span-2 lg:col-span-1">
-        <div class="relative p-4 sm:p-6 flex items-center justify-center h-60 sm:h-72 lg:h-80">
-          <img src="./Images/pendleton water bottle-min.png" alt="water bottle-min" class="w-full h-full object-contain transition-transform duration-300 hover:scale-110" />
-          <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+
+      <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer">
+        <div class="relative p-6 flex items-center justify-center h-80">
+          <img src="./Images/pendleton water bottle-min.png" alt="water bottle-min" class="w-80 h-80 object-contain transition-transform duration-300 hover:scale-120 " />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-3 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="text-base sm:text-lg font-bold">Pendleton Water Bottle</h3><span class="font-bold text-sm sm:text-base">$89.<sup>00</sup></span>
+            <h3 class="text-lg font-bold">Pendleton Water Bottle</h3>
+            <span class="font-bold">$89.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Table with air purifier, stained veneer/black</p>
-          <div class="flex items-center gap-1 text-green-400 mb-3 sm:mb-4"><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><span class="text-gray-500 text-xs sm:text-sm">(121)</span></div>
-          <button class="btn btn-outline hover:bg-green-900 hover:text-white rounded-full w-36 sm:w-40 text-sm font-semibold">Add to Cart</button>
+          <p class="text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+          <div class="flex items-center gap-1 text-green-400 mb-4">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-sm">(121)</span>
+          </div>
+          <button class="btn btn-outline hover:bg-green-900 hover:text-white rounded-full w-40 font-semibold">Add to
+            Cart</button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Cash Back Banner Section -->
-  <section class="relative min-h-[260px] sm:min-h-[400px] lg:h-[600px] flex items-center justify-end px-4 sm:px-10 lg:px-16 py-8 sm:py-0 overflow-hidden">
-    <div id="parallax-bg" class="absolute inset-0 scale-110" style="background-image: url('./public/Images/biscount\ banner-min.png'); background-size: cover; background-position: center;"></div>
+  <section class="relative h-[600px] flex items-center justify-end px-16 overflow-hidden">
+    <!-- Background Image with Parallax -->
+    <div id="parallax-bg" class="absolute inset-0 scale-110" style="background-image: url('./public/Images/biscount\ banner-min.png'); background-size: cover; background-position: center;">
+    </div>
+
+    <!-- Dark Overlay -->
     <div class="absolute inset-0 bg-black/10"></div>
-    <div class="relative z-10 bg-green-900 text-white p-5 sm:p-10 rounded-2xl w-full max-w-[240px] sm:max-w-sm">
-      <h2 class="text-xl sm:text-4xl font-extrabold mb-2 sm:mb-4">Get 5% Cash Back On $200</h2>
-      <p class="text-xs sm:text-sm mb-3 sm:mb-6">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank balance.</p>
-      <button class="border-2 border-white text-white hover:bg-white hover:text-green-900 transition-colors duration-300 rounded-full px-5 sm:px-8 py-2 sm:py-3 font-semibold cursor-pointer text-xs sm:text-base">Learn More</button>
+
+    <!-- Green Content Box -->
+    <div class="relative z-10 bg-green-900 text-white p-10 rounded-2xl max-w-sm">
+      <h2 class="text-4xl font-extrabold mb-4">Get 5% Cash Back On $200</h2>
+      <p class="text-sm mb-6">Shopping is a bit of a relaxing hobby for me, which is sometimes troubling for the bank
+        balance.</p>
+      <button class="border-2 border-white text-white hover:bg-white hover:text-green-900 transition-colors duration-300 rounded-full px-8 py-3 font-semibold cursor-pointer">
+        Learn More
+      </button>
     </div>
   </section>
 
   <!-- Filtered Products Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Todays Best Deals For You!</h2>
-    <!-- Filter Tabs — horizontally scrollable on mobile -->
-    <div class="flex gap-2 sm:gap-3 mb-5 sm:mb-8 overflow-x-auto pb-1" style="-webkit-overflow-scrolling:touch;">
-      <button onclick="filterProducts('all')" class="filter-btn active-filter px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Gadgets</button>
-      <button onclick="filterProducts('fashion')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Fashion</button>
-      <button onclick="filterProducts('toys')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Toys</button>
-      <button onclick="filterProducts('education')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Education</button>
-      <button onclick="filterProducts('beauty')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Beauty</button>
-      <button onclick="filterProducts('fitness')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Fitness</button>
-      <button onclick="filterProducts('furniture')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Furniture</button>
-      <button onclick="filterProducts('sneakers')" class="filter-btn px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-gray-300 text-xs sm:text-sm font-medium cursor-pointer flex-shrink-0">Sneakers</button>
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-6">Todays Best Deals For You!</h2>
+
+    <!-- Filter Tabs -->
+    <div class="flex gap-3 mb-8">
+      <button onclick="filterProducts('all')" class="filter-btn active-filter px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Gadgets</button>
+      <button onclick="filterProducts('fashion')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Fashion</button>
+      <button onclick="filterProducts('toys')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Toys</button>
+      <button onclick="filterProducts('education')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Education</button>
+      <button onclick="filterProducts('beauty')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Beauty</button>
+      <button onclick="filterProducts('fitness')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Fitness</button>
+      <button onclick="filterProducts('furniture')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Furniture</button>
+      <button onclick="filterProducts('sneakers')" class="filter-btn px-5 py-2 rounded-full border border-gray-300 text-sm font-medium cursor-pointer">Sneakers</button>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6" id="product-grid">
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-4 gap-6" id="product-grid">
+
+      <!-- Product Card -->
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="all">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/leptop sleeve-min.png" alt="Laptop sleeve MacBook mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/leptop sleeve-min.png" alt="Laptop sleeve MacBook mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">Laptop sleeve MacBook</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$59</span>
+            <h3 class="font-bold">Laptop sleeve MacBook</h3>
+            <span class="font-bold text-sm">$59.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">Organic Cotton, fairtrade certified</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">Organic Cotton, fairtrade certified</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
+      <!-- Repeat cards with different data-category values -->
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/airpod max-min.png" alt="AirPods Max Mini 9" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/airpod max-min.png" alt="AirPods Max Mini 9" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">AirPods Max</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$559</span>
+            <h3 class="font-bold">AirPods Max</h3>
+            <span class="font-bold text-sm">$559.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">A perfect balance of high-fidelity audio</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">A perfect balance of high-fidelity audio</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="fashion">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/flower leptop sleeve-min.png" alt="Flower Laptop Sleeve" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/flower leptop sleeve-min.png" alt="Flower Laptop Sleeve" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">Flower Laptop Sleeve</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$39</span>
+            <h3 class="font-bold">Flower Laptop Sleeve</h3>
+            <span class="font-bold text-sm">$39.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">15 in. x 10 in. -Flap top closure</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">15 in. x 10 in. -Flap top closure</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/water pot-min.png" alt="Supreme Water Bottle" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/water pot-min.png" alt="Supreme Water Bottle" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">Supreme Water Bottle</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$19</span>
+            <h3 class="font-bold">Supreme Water Bottle</h3>
+            <span class="font-bold text-sm">$19.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">Table with air purifier, stained veneer/black</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">Table with air purifier, stained veneer/black</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="fashion">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/leptop sleeve macbook-min.png" alt="Laptop sleeve MacBook" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/leptop sleeve macbook-min.png" alt="Laptop sleeve MacBook" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">Laptop sleeve MacBook</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$59</span>
+            <h3 class="font-bold">Laptop sleeve MacBook</h3>
+            <span class="font-bold text-sm">$59.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">Organic Cotton, fairtrade certified</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">Organic Cotton, fairtrade certified</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/macbook 13-min.png" alt="Macbook pro 13" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/macbook 13-min.png" alt="Macbook pro 13" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">Macbook pro 13</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$1099</span>
+            <h3 class="font-bold">Macbook pro 13</h3>
+            <span class="font-bold text-sm">$1099.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">256, 8 core GPU, 8 GB</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">256, 8 core GPU, 8 GB</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="furniture">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">HomePod mini</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$59</span>
+            <h3 class="font-bold">HomePod mini</h3>
+            <span class="font-bold text-sm">$59.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">5 Colors Available</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">5 Colors Available</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
       <div class="product-card bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" data-category="gadgets">
-        <div class="relative p-3 sm:p-6 flex items-center justify-center h-36 sm:h-56 lg:h-82">
-          <img src="./Images/ipad mini-min.png" alt="Ipad Mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-110" />
-          <button class="absolute top-2 right-2 sm:top-4 sm:right-4 bg-white rounded-full p-1.5 sm:p-2 shadow"><i data-lucide="heart" class="w-3 h-3 sm:w-4 sm:h-4 text-gray-400"></i></button>
+        <div class="relative p-6 flex items-center justify-center h-82">
+          <img src="./Images/ipad mini-min.png" alt="Ipad Mini" class="h-full object-contain transition-transform duration-500 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-4 h-4 text-gray-400"></i>
+          </button>
         </div>
-        <div class="bg-white p-2.5 sm:p-4">
+        <div class="bg-white p-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="font-bold text-xs sm:text-sm truncate">Ipad Mini</h3><span class="font-bold text-xs sm:text-sm ml-1 flex-shrink-0">$539</span>
+            <h3 class="font-bold">Ipad Mini</h3>
+            <span class="font-bold text-sm">$539.<sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs mb-1.5 hidden sm:block">Table with air purifier, stained veneer/black</p>
-          <div class="flex items-center gap-0.5 text-green-400 mb-2 sm:mb-3"><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 fill-green-400"></i><span class="text-gray-500 text-xs">(121)</span></div>
-          <button class="border border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-2 sm:px-6 py-1 text-xs font-semibold cursor-pointer transition-colors duration-300 w-full sm:w-auto">Add to Cart</button>
+          <p class="text-gray-500 text-xs mb-2">Table with air purifier, stained veneer/black</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-xs">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-1 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Cash Back Card Section -->
-  <section class="bg-orange-50 px-4 sm:px-8 lg:px-16 py-10 sm:py-16 flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-0">
-    <div class="max-w-md text-center sm:text-left">
-      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-3 sm:mb-4">Get 5% Cash Back</h2>
-      <p class="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8">on Shopcart.com</p>
-      <button class="bg-green-800 hover:bg-green-900 text-white rounded-full px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold cursor-pointer transition-colors duration-300">Learn More</button>
+  <section class="bg-orange-50 px-16 py-16 flex items-center justify-between">
+
+    <!-- Left Text -->
+    <div class="max-w-md">
+      <h2 class="text-6xl font-extrabold text-gray-900 mb-4">Get 5% Cash Back</h2>
+      <p class="text-xl text-gray-600 mb-8">on Shopcart.com</p>
+      <button class="bg-green-800 hover:bg-green-900 text-white rounded-full px-10 py-4 text-lg font-semibold cursor-pointer transition-colors duration-300">
+        Learn More
+      </button>
     </div>
-    <div class="flex-1 flex justify-center sm:justify-end">
-      <img src="./Images/card.png" alt="Shopcart Cards" class="w-56 sm:w-72 lg:w-[500px] object-contain" />
+
+    <!-- Right Image -->
+    <div class="flex-1 flex justify-end">
+      <img src="./Images/card.png" alt="Shopcart Cards" class="w-[500px] object-contain" />
     </div>
+
   </section>
 
   <!-- Most Selling Products Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Most Selling Products</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Most Selling Products</h2>
+
+    <div class="grid grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
       <div class="cursor-pointer group">
-        <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-60 sm:h-72 lg:h-80 overflow-hidden">
-          <img src="./Images/instax mini 11-min.png" alt="Instax Mini 11" class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110" />
-          <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <!-- Image Area -->
+        <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+          <img src="./Images/instax mini 11-min.png" alt="Instax Mini 11" class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+          </button>
         </div>
-        <div class="pt-3 sm:pt-4">
+        <!-- Info Area (outside card) -->
+        <div class="pt-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="text-base sm:text-lg font-bold">Instax Mini 11</h3><span class="font-bold text-sm sm:text-base">$89.<sup>00</sup></span>
+            <h3 class="text-lg font-bold">Instax Mini 11</h3>
+            <span class="font-bold">$<sup>89.</sup><sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
-          <div class="flex items-center gap-1 text-green-400 mb-3"><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><span class="text-gray-500 text-xs sm:text-sm">(121)</span></div>
-          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+          <p class="text-gray-500 text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-sm">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="cursor-pointer group">
-        <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-60 sm:h-72 lg:h-80 overflow-hidden">
-          <img src="./Images/watch-black-min.png" alt="Hand Watch" class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110" />
-          <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+        <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+          <img src="./Images/watch-black-min.png" alt="Hand Watch" class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+          </button>
         </div>
-        <div class="pt-3 sm:pt-4">
+        <div class="pt-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="text-base sm:text-lg font-bold">Hand Watch</h3><span class="font-bold text-sm sm:text-base">$59.<sup>00</sup></span>
+            <h3 class="text-lg font-bold">Hand Watch</h3>
+            <span class="font-bold">$<sup>59.</sup><sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Citizen 650M, W-69g</p>
-          <div class="flex items-center gap-1 text-green-400 mb-3"><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><span class="text-gray-500 text-xs sm:text-sm">(121)</span></div>
-          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+          <p class="text-gray-500 text-sm mb-2">Citizen 650M, W-69g</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-sm">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
-      <div class="cursor-pointer group sm:col-span-2 lg:col-span-1">
-        <div class="relative bg-gray-100 rounded-2xl p-4 sm:p-6 flex items-center justify-center h-60 sm:h-72 lg:h-80 overflow-hidden">
-          <img src="./Images/adidas sneakers-min.png" alt="Adidas Sneakers" class="h-full w-full object-contain transition-transform duration-300 group-hover:scale-110" />
-          <button class="absolute top-3 right-3 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-4 h-4 sm:w-5 sm:h-5 text-gray-400"></i></button>
+
+      <!-- Card 3 -->
+      <div class="cursor-pointer group">
+        <div class="relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden">
+          <img src="./Images/adidas sneakers-min.png" alt="Adidas Sneakers" class="h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-120" />
+          <button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow">
+            <i data-lucide="heart" class="w-5 h-5 text-gray-400"></i>
+          </button>
         </div>
-        <div class="pt-3 sm:pt-4">
+        <div class="pt-4">
           <div class="flex justify-between items-center mb-1">
-            <h3 class="text-base sm:text-lg font-bold">adidas Sneakers</h3><span class="font-bold text-sm sm:text-base">$159.<sup>00</sup></span>
+            <h3 class="text-lg font-bold">adidas Sneakers</h3>
+            <span class="font-bold">$<sup>159.</sup><sup>00</sup></span>
           </div>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">x Sean Wotherspoon Superstar sneakers</p>
-          <div class="flex items-center gap-1 text-green-400 mb-3"><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><i data-lucide="star" class="w-3 h-3 sm:w-4 sm:h-4 fill-green-400"></i><span class="text-gray-500 text-xs sm:text-sm">(121)</span></div>
-          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-5 sm:px-6 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+          <p class="text-gray-500 text-sm mb-2">x Sean Wotherspoon Superstar sneakers</p>
+          <div class="flex items-center gap-1 text-green-400 mb-3">
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-green-400"></i>
+            <span class="text-gray-500 text-sm">(121)</span>
+          </div>
+          <button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add
+            to Cart</button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Trending Products Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Trending Products For You!</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Trending Products For You!</h2>
+
+    <div class="grid grid-cols-2 gap-6">
+
+      <!-- Card 1 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer group border border-gray-200">
-        <div class="overflow-hidden h-48 sm:h-60 lg:h-72">
-          <img src="./Images/furniture village-min.png" alt="Furniture Village" class="object-cover w-full h-full object-center transition-transform duration-500 group-hover:scale-110" />
+        <!-- Image -->
+        <div class="overflow-hidden h-72">
+          <img src="./Images/furniture village-min.png" alt="Furniture Village" class="object-cover w-full h-full object-center transition-transform duration-500 group-hover:scale-120" />
         </div>
-        <div class="p-4 sm:p-6">
-          <h3 class="text-lg sm:text-2xl font-bold mb-1">Furniture Village</h3>
-          <p class="text-gray-500 text-sm sm:text-base mb-3 sm:mb-4">Delivery with in 24 hours</p>
-          <button class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold cursor-pointer transition-colors duration-300">Shop Now</button>
+        <!-- Info -->
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-1">Furniture Village</h3>
+          <p class="text-gray-500 mb-4">Delivery with in 24 hours</p>
+          <button class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-8 py-3 font-semibold cursor-pointer transition-colors duration-300">
+            Shop Now
+          </button>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer group border border-gray-200">
-        <div class="overflow-hidden h-48 sm:h-60 lg:h-72">
-          <img src="./Images/Fashion world-min.png" alt="Fashion World" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+        <!-- Image -->
+        <div class="overflow-hidden h-72">
+          <img src="./Images/Fashion world-min.png" alt="Fashion World" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-120" />
         </div>
-        <div class="p-4 sm:p-6">
-          <h3 class="text-lg sm:text-2xl font-bold mb-1">Fashion World</h3>
-          <p class="text-gray-500 text-sm sm:text-base mb-3 sm:mb-4">Delivery with in 24 hours</p>
-          <button class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-semibold cursor-pointer transition-colors duration-300">Shop Now</button>
+        <!-- Info -->
+        <div class="p-6">
+          <h3 class="text-2xl font-bold mb-1">Fashion World</h3>
+          <p class="text-gray-500 mb-4">Delivery with in 24 hours</p>
+          <button class="bg-gray-900 hover:bg-green-900 text-white rounded-full px-8 py-3 font-semibold cursor-pointer transition-colors duration-300">
+            Shop Now
+          </button>
         </div>
       </div>
+
     </div>
   </section>
 
+
   <!-- Best Selling Store Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Best Selling Store</h2>
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Best Selling Store</h2>
+
+    <div class="grid grid-cols-4 gap-6">
+
+      <!-- Card 1 -->
       <div class="cursor-pointer group">
+        <!-- Image with overlapping logo -->
         <div class="relative">
-          <div class="overflow-hidden rounded-2xl h-40 sm:h-52 lg:h-66">
+          <div class="overflow-hidden rounded-2xl h-66">
             <img src="./Images/store one-min.png" alt="Staples" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287.png" alt="Staples logo" class="absolute -bottom-5 left-3 w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <!-- Overlapping brand logo -->
+          <img src="./Images/Ellipse 287.png" alt="Staples logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
-        <div class="pt-8 sm:pt-10">
-          <h3 class="text-base sm:text-xl font-bold mb-1">Staples</h3>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Bag • Perfume</p>
-          <div class="flex items-center gap-1 sm:gap-2 text-green-600 text-xs sm:text-sm font-medium"><i data-lucide="tag" class="w-3 h-3 sm:w-4 sm:h-4"></i>Delivery within 24 hours</div>
+
+        <!-- Info -->
+        <div class="pt-10">
+          <h3 class="text-xl font-bold mb-1">Staples</h3>
+          <p class="text-gray-500 text-sm mb-2">Bag • Perfume</p>
+          <div class="flex items-center gap-2 text-green-600 text-sm font-medium">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            Delivery with in 24 hours
+          </div>
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="cursor-pointer group">
         <div class="relative">
-          <div class="overflow-hidden rounded-2xl h-40 sm:h-52 lg:h-66">
+          <div class="overflow-hidden rounded-2xl h-66">
             <img src="./Images/store two-min.png" alt="Now Delivery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287-1.png" alt="Now Delivery logo" class="absolute -bottom-5 left-3 w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287-1.png" alt="Now Delivery logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
-        <div class="pt-8 sm:pt-10">
-          <h3 class="text-base sm:text-xl font-bold mb-1">Now Delivery</h3>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Bag • Perfume</p>
-          <div class="flex items-center gap-1 sm:gap-2 text-green-600 text-xs sm:text-sm font-medium"><i data-lucide="tag" class="w-3 h-3 sm:w-4 sm:h-4"></i>Delivery within 24 hours</div>
+        <div class="pt-10">
+          <h3 class="text-xl font-bold mb-1">Now Delivery</h3>
+          <p class="text-gray-500 text-sm mb-2">Bag • Perfume</p>
+          <div class="flex items-center gap-2 text-green-600 text-sm font-medium">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            Delivery with in 24 hours
+          </div>
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="cursor-pointer group">
         <div class="relative">
-          <div class="overflow-hidden rounded-2xl h-40 sm:h-52 lg:h-66">
+          <div class="overflow-hidden rounded-2xl h-66">
             <img src="./Images/store three-min.png" alt="Bevmo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287-2.png" alt="Bevmo logo" class="absolute -bottom-5 left-3 w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287-2.png" alt="Bevmo logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
-        <div class="pt-8 sm:pt-10">
-          <h3 class="text-base sm:text-xl font-bold mb-1">Bevmo</h3>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Bag • Perfume</p>
-          <div class="flex items-center gap-1 sm:gap-2 text-green-600 text-xs sm:text-sm font-medium"><i data-lucide="tag" class="w-3 h-3 sm:w-4 sm:h-4"></i>Delivery within 24 hours</div>
+        <div class="pt-10">
+          <h3 class="text-xl font-bold mb-1">Bevmo</h3>
+          <p class="text-gray-500 text-sm mb-2">Bag • Perfume</p>
+          <div class="flex items-center gap-2 text-green-600 text-sm font-medium">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            Delivery with in 24 hours
+          </div>
         </div>
       </div>
+
+      <!-- Card 4 -->
       <div class="cursor-pointer group">
         <div class="relative">
-          <div class="overflow-hidden rounded-2xl h-40 sm:h-52 lg:h-66">
+          <div class="overflow-hidden rounded-2xl h-66">
             <img src="./Images/store four-min.png" alt="Quicklly" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           </div>
-          <img src="./Images/Ellipse 287-3.png" alt="Quicklly logo" class="absolute -bottom-5 left-3 w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 border-white shadow-md object-cover" />
+          <img src="./Images/Ellipse 287-3.png" alt="Quicklly logo" class="absolute -bottom-6 left-4 w-14 h-14 rounded-full border-2 border-white shadow-md object-cover" />
         </div>
-        <div class="pt-8 sm:pt-10">
-          <h3 class="text-base sm:text-xl font-bold mb-1">Quicklly</h3>
-          <p class="text-gray-500 text-xs sm:text-sm mb-2">Bag • Perfume</p>
-          <div class="flex items-center gap-1 sm:gap-2 text-green-600 text-xs sm:text-sm font-medium"><i data-lucide="tag" class="w-3 h-3 sm:w-4 sm:h-4"></i>Delivery within 24 hours</div>
+        <div class="pt-10">
+          <h3 class="text-xl font-bold mb-1">Quicklly</h3>
+          <p class="text-gray-500 text-sm mb-2">Bag • Perfume</p>
+          <div class="flex items-center gap-2 text-green-600 text-sm font-medium">
+            <i data-lucide="tag" class="w-4 h-4"></i>
+            Delivery with in 24 hours
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="px-4 sm:px-8 lg:px-16 py-8 sm:py-12">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-5 sm:mb-8">Services To Help You Shop</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+  <section class="px-16 py-12">
+    <h2 class="text-3xl font-bold mb-8">Services To Help You Shop</h2>
+
+    <div class="grid grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer group bg-gray-100">
-        <div class="p-5 sm:p-8 lg:p-18">
-          <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Frequently Asked Questions</h3>
-          <p class="text-gray-500 text-sm">Updates on safe Shopping in our Stores</p>
+        <div class="p-18">
+          <h3 class="text-2xl font-bold mb-4">Frequently Asked Questions</h3>
+          <p class="text-gray-500">Updates on safe Shopping in our Stores</p>
         </div>
-        <div class="overflow-hidden h-44 sm:h-56 lg:h-76">
+        <div class="overflow-hidden h-76">
           <img src="./Images/faq-min.png" alt="FAQ" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
+      <!-- Card 2 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer group bg-gray-100">
-        <div class="p-5 sm:p-8 lg:p-18">
-          <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Online Payment Process</h3>
-          <p class="text-gray-500 text-sm">Updates on safe Shopping in our Stores</p>
+        <div class="p-18">
+          <h3 class="text-2xl font-bold mb-4">Online Payment Process</h3>
+          <p class="text-gray-500">Updates on safe Shopping in our Stores</p>
         </div>
-        <div class="overflow-hidden h-44 sm:h-56 lg:h-76">
+        <div class="overflow-hidden h-76">
           <img src="./Images/onlie payment-min.png" alt="Payment" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
+      <!-- Card 3 -->
       <div class="rounded-2xl overflow-hidden cursor-pointer group bg-gray-100">
-        <div class="p-5 sm:p-8 lg:p-18">
-          <h3 class="text-lg sm:text-2xl font-bold mb-2 sm:mb-4">Home Delivery Options</h3>
-          <p class="text-gray-500 text-sm">Updates on safe Shopping in our Stores</p>
+        <div class="p-18">
+          <h3 class="text-2xl font-bold mb-4">Home Delivery Options</h3>
+          <p class="text-gray-500">Updates on safe Shopping in our Stores</p>
         </div>
-        <div class="overflow-hidden h-44 sm:h-56 lg:h-76">
+        <div class="overflow-hidden h-76">
           <img src="./Images/home delivery-min.png" alt="Delivery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
         </div>
       </div>
+
     </div>
   </section>
 
+
   <!-- Footer -->
-  <footer class="px-4 sm:px-8 lg:px-16 py-10 sm:py-16 border-t border-gray-200">
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
-      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
-        <a class="flex items-center gap-2 cursor-pointer mb-4 sm:mb-6">
-          <img src="./Images/logo.png" alt="Shopcart Logo" class="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
-          <span class="text-xl sm:text-2xl font-extrabold text-green-700">Shopcart</span>
+  <footer class="px-16 py-16 border-t border-gray-200">
+    <div class="grid grid-cols-5 gap-8">
+
+      <!-- Logo & Description -->
+      <div class="col-span-1">
+        <a class="flex items-center gap-2 cursor-pointer mb-6">
+          <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" />
+          <span class="text-2xl font-extrabold text-green-700">Shopcart</span>
         </a>
-        <p class="text-gray-500 text-xs sm:text-sm mb-5 sm:mb-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-        <h4 class="font-bold mb-3 sm:mb-4 text-sm sm:text-base">Accepted Payments</h4>
-        <div class="grid grid-cols-4 gap-1.5 sm:gap-2">
-          <img src="./Images/stripe.png" alt="Stripe" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/visa.png" alt="Visa" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/Mastercard.png" alt="Mastercard" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/Amazon.png" alt="Amazon" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/Klarna.png" alt="Klarna" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/PayPal.png" alt="PayPal" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/ApplePay.png" alt="Apple Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
-          <img src="./Images/GooglePay.png" alt="Google Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-8 sm:h-10" />
+        <p class="text-gray-500 text-sm mb-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+          Velit officia consequat duis enim velit mollit.</p>
+
+        <!-- Accepted Payments -->
+        <h4 class="font-bold mb-4">Accepted Payments</h4>
+        <div class="grid grid-cols-4 gap-2">
+          <img src="./Images/stripe.png" alt="Stripe" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/visa.png" alt="Visa" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Mastercard.png" alt="Mastercard" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Amazon.png" alt="Amazon" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Klarna.png" alt="Klarna" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/PayPal.png" alt="PayPal" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/ApplePay.png" alt="Apple Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/GooglePay.png" alt="Google Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
         </div>
       </div>
+
+      <!-- Department -->
       <div>
-        <h4 class="font-bold text-sm sm:text-lg mb-3 sm:mb-6">Department</h4>
-        <ul class="flex flex-col gap-2 sm:gap-3 text-gray-500 text-xs sm:text-sm">
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Fashion</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Education Product</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Frozen Food</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Beverages</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Organic Grocery</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Office Supplies</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Beauty Products</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Books</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Electronics & Gadget</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Travel Accessories</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Fitness</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Sneakers</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Toys</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Furniture</li>
+        <h4 class="font-bold text-lg mb-6">Department</h4>
+        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Fashion</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Education Product</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Frozen Food</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Beverages</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Organic Grocery</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Office Supplies</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Beauty Products</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Books</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Electronics & Gadget</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Travel Accessories</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Fitness</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Sneakers</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Toys</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Furniture</li>
         </ul>
       </div>
+
+      <!-- About Us -->
       <div>
-        <h4 class="font-bold text-sm sm:text-lg mb-3 sm:mb-6">About Us</h4>
-        <ul class="flex flex-col gap-2 sm:gap-3 text-gray-500 text-xs sm:text-sm">
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">About Shopcart</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Careers</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">News & Blog</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Help</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Press Center</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shop By Location</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shopcart Brands</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Affiliate & Partners</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Ideas & Guides</li>
+        <h4 class="font-bold text-lg mb-6">About Us</h4>
+        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            About Shopcart</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Careers</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            News & Blog</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Help</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Press Center</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Shop By Location</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Shopcart Brands</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Affiliate & Partners</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Ideas & Guides</li>
         </ul>
       </div>
+
+      <!-- Services -->
       <div>
-        <h4 class="font-bold text-sm sm:text-lg mb-3 sm:mb-6">Services</h4>
-        <ul class="flex flex-col gap-2 sm:gap-3 text-gray-500 text-xs sm:text-sm">
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Gift Card</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Mobile App</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shipping & Delivery</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Order Pickup</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Account Signup</li>
+        <h4 class="font-bold text-lg mb-6">Services</h4>
+        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Gift Card</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Mobile App</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Shipping & Delivery</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Order Pickup</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Account Signup</li>
         </ul>
       </div>
+
+      <!-- Help -->
       <div>
-        <h4 class="font-bold text-sm sm:text-lg mb-3 sm:mb-6">Help</h4>
-        <ul class="flex flex-col gap-2 sm:gap-3 text-gray-500 text-xs sm:text-sm">
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shopcart Help</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Returns</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Track Orders</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Contact Us</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Feedback</li>
-          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Security & Fraud</li>
+        <h4 class="font-bold text-lg mb-6">Help</h4>
+        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Shopcart Help</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Returns</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Track Orders</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Contact Us</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Feedback</li>
+          <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
+            Security & Fraud</li>
         </ul>
       </div>
+
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-gray-100 mt-8 sm:mt-10 pt-5 sm:pt-6 flex flex-col md:flex-row items-center justify-between text-xs sm:text-sm text-gray-500 gap-3 sm:gap-4">
-      <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-4 sm:gap-x-9 gap-y-2">
+    <div class="border-t border-gray-100 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
+
+      <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-9 gap-y-2">
+
         <a href="#" class="flex items-center gap-1.5 group">
-          <i data-lucide="briefcase-business" class="w-5 h-5 sm:w-7 sm:h-7 text-rose-400"></i>
-          <span class="hover:text-[#ff5c4c] transition-colors text-sm sm:text-lg font-semibold">Become Seller</span>
+          <i data-lucide="briefcase-business" class="w-7 h-7 text-rose-400"></i>
+          <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Become Seller</span>
         </a>
+
         <a href="#" class="flex items-center gap-1.5">
-          <i data-lucide="gift" class="w-5 h-5 sm:w-7 sm:h-7 text-rose-400"></i>
-          <span class="hover:text-[#ff5c4c] transition-colors text-sm sm:text-lg font-semibold">Gift Cards</span>
+          <i data-lucide="gift" class="w-7 h-7 text-rose-400"></i>
+          <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Gift Cards</span>
         </a>
+
         <a href="#" class="flex items-center gap-1.5">
-          <i data-lucide="help-circle" class="w-5 h-5 sm:w-7 sm:h-7 text-rose-400"></i>
-          <span class="hover:text-[#ff5c4c] transition-colors text-sm sm:text-lg font-semibold">Help Center</span>
+          <i data-lucide="help-circle" class="w-7 h-7 text-rose-400"></i>
+          <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Help Center</span>
         </a>
-        <a href="#" class="hover:text-[#ff5c4c] transition-colors text-sm sm:text-lg font-semibold">Terms of Service</a>
-        <a href="#" class="hover:text-[#ff5c4c] transition-colors text-sm sm:text-lg font-semibold">Privacy & Policy</a>
+
+        <a href="#" class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Terms of Service</a>
+        <a href="#" class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Privacy & Policy</a>
       </div>
-      <p class="text-center md:text-right text-sm sm:text-lg font-semibold">
+
+      <p class="text-center md:text-right text-lg font-semibold">
         © 2026 Shopcart. All rights reserved. | Made with ❤️ by <span class="text-green-700 font-medium">Musemind</span>
       </p>
     </div>
+
   </footer>
 
-  <!-- Drawer open script — does NOT duplicate main.js logic -->
-
-
   <script type="module" src="./src/main.js"></script>
-
+</body>
 
 </html>
