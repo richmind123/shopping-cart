@@ -476,3 +476,27 @@ document.getElementById('mobile-menu-btn').addEventListener('click', function ()
   document.getElementById('mobile-drawer-overlay').classList.remove('hidden');
   document.getElementById('mobile-drawer').classList.remove('translate-x-full');
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.getElementById("hamburger-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const categoryBtn = document.getElementById("category-btn");
+  const categoryDropdown = document.getElementById("category-dropdown");
+  const categoryChevron = document.getElementById("category-chevron");
+
+  // Toggle Entire Mobile Menu Card
+  hamburgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+    mobileMenu.classList.toggle("flex");
+  });
+
+  // Toggle Category Inner Accordion
+  categoryBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    categoryDropdown.classList.toggle("hidden");
+
+    // Rotate arrow icon up/down when open
+    categoryChevron.classList.toggle("rotate-180");
+  });
+});
