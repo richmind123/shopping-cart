@@ -468,3 +468,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
+document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+  document.getElementById('mobile-drawer-overlay').classList.remove('hidden');
+  document.getElementById('mobile-drawer').classList.remove('translate-x-full');
+});
