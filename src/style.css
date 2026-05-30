@@ -56,3 +56,617 @@ section.animate-show {
   animation: dropIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   opacity: 0;
 }
+
+
+
+
+
+
+
+/* ============================================
+       MOBILE RESPONSIVE STYLES (max-width: 768px)
+       ============================================ */
+
+/* --- TOP BAR --- */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    padding: 0.5rem 1rem !important;
+    text-align: center !important;
+  }
+
+  .topbar-promo {
+    display: none !important;
+  }
+
+  .topbar-phone {
+    font-size: 0.85rem !important;
+  }
+
+  .topbar-selects {
+    font-size: 0.8rem !important;
+    gap: 2rem !important;
+  }
+}
+
+/* --- HEADER --- */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 0.75rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .desktop-search {
+    display: none !important;
+  }
+
+  .desktop-account {
+    display: none !important;
+  }
+
+  .mobile-hamburger {
+    display: flex !important;
+  }
+}
+
+.mobile-hamburger {
+  display: none;
+}
+
+/* --- MOBILE NAV DROPDOWN (inline below header) --- */
+.mobile-nav-panel {
+  display: none;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 1rem 0;
+}
+
+.mobile-nav-panel.open {
+  display: flex;
+}
+
+.mobile-nav-panel a,
+.mobile-nav-panel button.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #111;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Category sub-panel */
+.mobile-category-panel {
+  display: none;
+  flex-direction: column;
+  background: #fafafa;
+  padding: 1rem 1.5rem;
+}
+
+.mobile-category-panel.open {
+  display: flex;
+}
+
+.mobile-category-panel h3 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.mobile-category-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-category-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.mobile-category-item p {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.mobile-category-item span {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* --- HERO --- */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto !important;
+    padding: 2rem 1.25rem 3rem !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .hero-section p {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-floating {
+    display: none !important;
+  }
+}
+
+/* --- CATEGORIES: 2-column grid --- */
+@media (max-width: 768px) {
+  .categories-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .categories-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .categories-scroll {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    overflow-x: unset !important;
+  }
+
+  .category-card {
+    min-width: unset !important;
+    width: 100% !important;
+    height: 160px !important;
+  }
+
+  .category-card span {
+    font-size: 1rem !important;
+  }
+}
+
+/* --- DEALS SLIDER: 2 cards visible --- */
+@media (max-width: 768px) {
+  .deals-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .deals-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .deals-card {
+    width: 180px !important;
+  }
+
+  .deals-card .card-img-box {
+    height: 160px !important;
+    padding: 0.75rem !important;
+  }
+
+  .deals-card .card-img-box img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  .deals-card h3 {
+    font-size: 0.85rem !important;
+  }
+
+  .deals-card .price {
+    font-size: 0.85rem !important;
+  }
+
+  .deals-card p.desc {
+    font-size: 0.7rem !important;
+    display: none;
+  }
+
+  .deals-card button {
+    font-size: 0.7rem !important;
+    padding: 0.25rem 0.75rem !important;
+  }
+}
+
+/* --- BRANDS: 1-column full width list --- */
+@media (max-width: 768px) {
+  .brands-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .brands-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .brands-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+
+  .brand-card {
+    padding: 0.75rem 1rem !important;
+    background: white !important;
+    border-radius: 0.75rem !important;
+    border: 1px solid #f3f4f6 !important;
+  }
+
+  .brand-card img {
+    width: 3rem !important;
+    height: 3rem !important;
+  }
+
+  .brand-card h3 {
+    font-size: 1rem !important;
+  }
+
+  .brand-card p {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* --- 70% OFF: 1-column stacked --- */
+@media (max-width: 768px) {
+  .off70-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .off70-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .off70-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .off70-grid .text-block {
+    height: auto !important;
+    padding: 1rem !important;
+  }
+
+  .off70-grid .text-5xl {
+    font-size: 2.5rem !important;
+  }
+
+  .off70-grid .img-block {
+    height: 180px !important;
+  }
+}
+
+/* --- WEEKLY POPULAR: 2-column --- */
+@media (max-width: 768px) {
+  .weekly-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .weekly-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .weekly-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .weekly-grid .card-img {
+    height: 150px !important;
+    padding: 0.75rem !important;
+  }
+
+  .weekly-grid .card-img img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .weekly-grid h3 {
+    font-size: 0.85rem !important;
+  }
+
+  .weekly-grid .price {
+    font-size: 0.85rem !important;
+  }
+
+  .weekly-grid p.desc {
+    font-size: 0.7rem !important;
+  }
+
+  .weekly-grid button {
+    font-size: 0.7rem !important;
+    width: auto !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+}
+
+/* --- CASH BACK BANNER --- */
+@media (max-width: 768px) {
+  .cashback-banner {
+    height: auto !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  .cashback-banner .green-box {
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    padding: 2rem 1.25rem !important;
+    width: 100% !important;
+  }
+
+  .cashback-banner .green-box h2 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* --- FILTER TABS: wrap multiple rows --- */
+@media (max-width: 768px) {
+  .filtered-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .filtered-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .filter-tabs {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .filter-btn {
+    font-size: 0.8rem !important;
+    padding: 0.35rem 0.85rem !important;
+  }
+
+  /* Product grid 2-col */
+  .product-grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .product-grid-4 .card-img-h {
+    height: 150px !important;
+    padding: 0.5rem !important;
+  }
+
+  .product-grid-4 .bg-white.p-4 {
+    padding: 0.5rem !important;
+  }
+
+  .product-grid-4 h3 {
+    font-size: 0.8rem !important;
+  }
+
+  .product-grid-4 .price {
+    font-size: 0.75rem !important;
+  }
+
+  .product-grid-4 p {
+    font-size: 0.65rem !important;
+  }
+
+  .product-grid-4 button {
+    font-size: 0.65rem !important;
+    padding: 0.25rem 0.65rem !important;
+  }
+}
+
+/* --- CASH BACK CARD SECTION --- */
+@media (max-width: 768px) {
+  .cashback-card-section {
+    flex-direction: column !important;
+    padding: 2rem 1.25rem !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .cashback-card-section h2 {
+    font-size: 2.25rem !important;
+  }
+
+  .cashback-card-section .card-img-wrap {
+    display: none !important;
+  }
+
+  .cashback-card-section button {
+    width: 100% !important;
+  }
+}
+
+/* --- MOST SELLING: 2-column --- */
+@media (max-width: 768px) {
+  .most-selling-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .most-selling-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .most-selling-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .most-selling-grid .card-img-area {
+    height: 150px !important;
+  }
+
+  .most-selling-grid h3 {
+    font-size: 0.85rem !important;
+  }
+
+  .most-selling-grid .price {
+    font-size: 0.85rem !important;
+  }
+
+  .most-selling-grid p {
+    font-size: 0.7rem !important;
+  }
+
+  .most-selling-grid button {
+    font-size: 0.7rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+}
+
+/* --- TRENDING: 1-column stacked --- */
+@media (max-width: 768px) {
+  .trending-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .trending-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .trending-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .trending-grid .img-box {
+    height: 200px !important;
+  }
+}
+
+/* --- BEST SELLING STORE: 2-column --- */
+@media (max-width: 768px) {
+  .best-store-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .best-store-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .best-store-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+
+  .best-store-grid .store-img {
+    height: 130px !important;
+  }
+
+  .best-store-grid h3 {
+    font-size: 0.9rem !important;
+  }
+
+  .best-store-grid p {
+    font-size: 0.7rem !important;
+  }
+
+  .best-store-grid .delivery-tag {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* --- SERVICES: 1-column stacked --- */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 1.25rem 1rem !important;
+  }
+
+  .services-section h2 {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .services-grid .service-img {
+    height: 200px !important;
+  }
+
+  .services-grid .service-text {
+    padding: 1.25rem !important;
+  }
+
+  .services-grid h3 {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* --- FOOTER --- */
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1rem !important;
+  }
+
+  /* Logo + description full width */
+  .footer-logo-col {
+    grid-column: span 2 !important;
+  }
+
+  /* 2-col: Department + About Us | Services + Help */
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Accepted payments below all columns */
+  .footer-payments {
+    margin-top: 1.5rem;
+  }
+
+  .footer-payments-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Bottom bar stacked */
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap !important;
+    gap: 0.5rem 1rem !important;
+  }
+
+  .footer-bottom-links a,
+  .footer-bottom-links span {
+    font-size: 0.875rem !important;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem !important;
+  }
+}
