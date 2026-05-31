@@ -24,6 +24,9 @@ section.animate-show {
   -webkit-user-select: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
 }
 
 #deals-slider::-webkit-scrollbar {
@@ -696,5 +699,7 @@ section.animate-show {
     scroll-behavior: smooth !important;
     overflow-x: scroll !important;
     cursor: default !important;
+    touch-action: pan-x !important;
+    pointer-events: auto !important;
   }
 }
