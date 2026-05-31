@@ -257,18 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
       slider.scrollLeft = scrollLeft - (x - startX);
     });
 
-    slider.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].pageX;
-      scrollLeft = slider.scrollLeft;
-    }, { passive: true });
 
-    slider.addEventListener("touchmove", (e) => {
-      const x = e.touches[0].pageX;
-      const walk = (startX - x) * 1;
-      slider.scrollLeft = scrollLeft + walk;
-    }, { passive: true });
-
-    slider.addEventListener("touchend", () => { });
   }
 
   // Filter Products
