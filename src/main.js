@@ -242,17 +242,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const moved = slider.scrollLeft - scrollLeft;
 
       if (moved > 50) {
-        if (slider.scrollLeft >= getMaxScroll() - 50) {
-          slider.scrollLeft = 0;
-        } else {
-          slider.scrollLeft = scrollLeft + cardWidth;
-        }
+        slider.scrollLeft = scrollLeft + cardWidth;
       } else if (moved < -50) {
-        if (slider.scrollLeft <= 50) {
-          slider.scrollLeft = getMaxScroll();
-        } else {
-          slider.scrollLeft = scrollLeft - cardWidth;
-        }
+        slider.scrollLeft = scrollLeft - cardWidth;
       } else {
         slider.scrollLeft = scrollLeft;
       }
@@ -268,33 +260,26 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.addEventListener("touchstart", (e) => {
       startX = e.touches[0].pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
-    });
+    }, { passive: true });
 
     slider.addEventListener("touchend", () => {
       const cardWidth = getCardWidth();
       const moved = slider.scrollLeft - scrollLeft;
 
       if (moved > 50) {
-        if (slider.scrollLeft >= getMaxScroll() - 50) {
-          slider.scrollLeft = 0;
-        } else {
-          slider.scrollLeft = scrollLeft + cardWidth;
-        }
+        slider.scrollLeft = scrollLeft + cardWidth;
       } else if (moved < -50) {
-        if (slider.scrollLeft <= 50) {
-          slider.scrollLeft = getMaxScroll();
-        } else {
-          slider.scrollLeft = scrollLeft - cardWidth;
-        }
+        slider.scrollLeft = scrollLeft - cardWidth;
       } else {
         slider.scrollLeft = scrollLeft;
       }
     });
 
     slider.addEventListener("touchmove", (e) => {
+      e.preventDefault();
       const x = e.touches[0].pageX - slider.offsetLeft;
       slider.scrollLeft = scrollLeft - (x - startX);
-    });
+    }, { passive: false });
   }
 
   // Filter Products
