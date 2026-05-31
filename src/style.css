@@ -133,8 +133,10 @@ section.animate-show {
   padding: 1rem 0;
 }
 
-.mobile-nav-panel.open {
-  display: flex;
+@media (max-width: 768px) {
+  .mobile-nav-panel.open {
+    display: flex;
+  }
 }
 
 .mobile-nav-panel a,
@@ -304,12 +306,12 @@ section.animate-show {
 /* --- BRANDS: 1-column full width list --- */
 @media (max-width: 768px) {
   .brands-section {
-    padding: 1.25rem 1rem !important;
+    padding: 2rem 1rem !important;
   }
 
   .brands-section h2 {
-    font-size: 1.3rem !important;
-    margin-bottom: 0.75rem !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 1.23rem !important;
   }
 
   .brands-grid {
@@ -318,15 +320,16 @@ section.animate-show {
   }
 
   .brand-card {
-    padding: 0.75rem 1rem !important;
+    padding: 1rem !important;
     background: white !important;
     border-radius: 0.75rem !important;
     border: 1px solid #f3f4f6 !important;
+    min-height: 100px !important;
   }
 
   .brand-card img {
-    width: 3rem !important;
-    height: 3rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
   }
 
   .brand-card h3 {
@@ -334,7 +337,7 @@ section.animate-show {
   }
 
   .brand-card p {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
   }
 }
 
