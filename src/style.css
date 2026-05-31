@@ -693,10 +693,8 @@ section.animate-show {
 @media (max-width: 768px) {
   #deals-slider {
     -webkit-overflow-scrolling: touch !important;
-    scroll-snap-type: x mandatory !important;
-  }
-
-  .deals-card {
-    scroll-snap-align: start !important;
+    scroll-behavior: smooth !important;
+    overflow-x: scroll !important;
+    cursor: default !important;
   }
 }
