@@ -63,6 +63,8 @@ section.animate-show {
 
 
 
+
+
 /* ============================================
        MOBILE RESPONSIVE STYLES (max-width: 768px)
        ============================================ */
@@ -178,21 +180,27 @@ section.animate-show {
   gap: 1rem;
   padding: 0.65rem 0;
   border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .mobile-category-item img {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 4px;
 }
 
 .mobile-category-item p {
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .mobile-category-item span {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: #9ca3af;
 }
 
@@ -408,15 +416,15 @@ section.animate-show {
 /* --- CASH BACK BANNER --- */
 @media (max-width: 768px) {
   .cashback-banner {
-    height: auto !important;
+    height: 280px !important;
     justify-content: center !important;
-    padding: 0 !important;
+    padding: 0 1.25rem !important;
   }
 
   .cashback-banner .green-box {
     max-width: 100% !important;
-    border-radius: 0 !important;
-    padding: 2rem 1.25rem !important;
+    border-radius: 1rem !important;
+    padding: 1.5rem !important;
     width: 100% !important;
   }
 
@@ -438,6 +446,7 @@ section.animate-show {
 
   .filter-tabs {
     flex-wrap: wrap !important;
+    overflow-x: unset !important;
     gap: 0.5rem !important;
     margin-bottom: 1rem !important;
   }
@@ -445,6 +454,7 @@ section.animate-show {
   .filter-btn {
     font-size: 0.8rem !important;
     padding: 0.35rem 0.85rem !important;
+    flex-shrink: 0 !important;
   }
 
   /* Product grid 2-col */
@@ -629,24 +639,30 @@ section.animate-show {
     padding: 2rem 1rem !important;
   }
 
-  /* Logo + description full width */
+  /* Stack the entire top grid into 1 column */
+  .footer-top-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Logo col: full width, payments 3-col grid */
   .footer-logo-col {
-    grid-column: span 2 !important;
-  }
-
-  /* 2-col: Department + About Us | Services + Help */
-  .footer-main-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 1.5rem !important;
-  }
-
-  /* Accepted payments below all columns */
-  .footer-payments {
-    margin-top: 1.5rem;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .footer-payments-grid {
     grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Hide the contents wrapper so the inner divs flow naturally */
+  .footer-nav-cols {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+    width: 100% !important;
   }
 
   /* Bottom bar stacked */

@@ -474,6 +474,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
 // Mobile hamburger toggle
 const hamburgerBtn = document.getElementById('mobile-hamburger-btn');
 const mobileNavPanel = document.getElementById('mobile-nav-panel');

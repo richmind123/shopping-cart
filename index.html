@@ -152,11 +152,11 @@
           <p>Shoe</p><span>240 Item Available</span>
         </div>
       </div>
-      <a href="/shopping-cart/headphones.html" class="mobile-category-item"><img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" />
+      <div class="mobile-category-item" onclick="window.location='/shopping-cart/headphones.html'"><img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" />
         <div>
           <p>Headphone</p><span>240 Item Available</span>
         </div>
-      </a>
+      </div>
       <div class="mobile-category-item"><img src="./Images/laptoprec1436-2.png" alt="Laptop" />
         <div>
           <p>Laptop</p><span>240 Item Available</span>
@@ -666,90 +666,99 @@
 
   <!-- Footer -->
   <footer class="px-16 py-16 border-t border-gray-200">
-    <!-- Logo & Description (full width on mobile) -->
-    <div class="footer-logo-col mb-8">
-      <a class="flex items-center gap-2 cursor-pointer mb-4">
-        <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" />
-        <span class="text-2xl font-extrabold text-green-700">Shopcart</span>
-      </a>
-      <p class="text-gray-500 text-sm max-w-sm">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
-    </div>
 
-    <!-- Main footer columns -->
-    <div class="footer-main-grid grid grid-cols-4 gap-8 mb-8">
-      <div>
-        <h4 class="font-bold text-lg mb-6">Department</h4>
-        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Fashion</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Education Product</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Frozen Food</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Beverages</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Organic Grocery</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Office Supplies</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Beauty Products</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Books</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Electronics & Gadget</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Travel Accessories</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Fitness</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Sneakers</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Toys</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Furniture</li>
-        </ul>
+    <!-- Desktop: 5-col grid (logo+payments col | dept | about | services | help) -->
+    <!-- Mobile: logo full width, then 2-col grid for nav links, payments below -->
+    <div class="footer-top-grid grid grid-cols-5 gap-8 mb-10">
+      <div class="footer-logo-col col-span-1">
+        <a class="flex items-center gap-2 cursor-pointer mb-6">
+          <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" />
+          <span class="text-2xl font-extrabold text-green-700">Shopcart</span>
+        </a>
+        <p class="text-gray-500 text-sm mb-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+        <h4 class="font-bold mb-4">Accepted Payments</h4>
+        <div class="footer-payments-grid grid grid-cols-4 gap-2">
+          <img src="./Images/stripe.png" alt="Stripe" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/visa.png" alt="Visa" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Mastercard.png" alt="Mastercard" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Amazon.png" alt="Amazon" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/Klarna.png" alt="Klarna" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/PayPal.png" alt="PayPal" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/ApplePay.png" alt="Apple Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+          <img src="./Images/GooglePay.png" alt="Google Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
+        </div>
       </div>
-      <div>
-        <h4 class="font-bold text-lg mb-6">About Us</h4>
-        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li class="hover:text-[#ff5c4c] cursor-pointer">About Shopcart</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Careers</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">News & Blog</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Help</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Press Center</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Shop By Location</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Shopcart Brands</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Affiliate & Partners</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Ideas & Guides</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg mb-6">Services</h4>
-        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Gift Card</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Mobile App</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Shipping & Delivery</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Order Pickup</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Account Signup</li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold text-lg mb-6">Help</h4>
-        <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Shopcart Help</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Returns</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Track Orders</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Contact Us</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Feedback</li>
-          <li class="hover:text-[#ff5c4c] cursor-pointer">Security & Fraud</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Accepted Payments -->
-    <div class="footer-payments mb-8">
-      <h4 class="font-bold mb-4">Accepted Payments</h4>
-      <div class="footer-payments-grid grid grid-cols-8 gap-2">
-        <img src="./Images/stripe.png" alt="Stripe" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/visa.png" alt="Visa" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/Mastercard.png" alt="Mastercard" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/Amazon.png" alt="Amazon" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/Klarna.png" alt="Klarna" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/PayPal.png" alt="PayPal" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/ApplePay.png" alt="Apple Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-        <img src="./Images/GooglePay.png" alt="Google Pay" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
-      </div>
-    </div>
+      <!-- Cols 2-5 wrapped for mobile 2-col grid -->
+      <div class="footer-nav-cols col-span-4 grid grid-cols-4 gap-8">
+
+        <!-- Col 2: Department -->
+        <div>
+          <h4 class="font-bold text-lg mb-6">Department</h4>
+          <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Fashion</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Education Product</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Frozen Food</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Beverages</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Organic Grocery</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Office Supplies</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Beauty Products</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Books</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Electronics & Gadget</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Travel Accessories</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Fitness</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Sneakers</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Toys</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Furniture</li>
+          </ul>
+        </div>
+
+        <!-- Col 3: About Us -->
+        <div>
+          <h4 class="font-bold text-lg mb-6">About Us</h4>
+          <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">About Shopcart</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Careers</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">News & Blog</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Help</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Press Center</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shop By Location</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shopcart Brands</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Affiliate & Partners</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Ideas & Guides</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Services -->
+        <div>
+          <h4 class="font-bold text-lg mb-6">Services</h4>
+          <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Gift Card</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Mobile App</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shipping & Delivery</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Order Pickup</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Account Signup</li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Help -->
+        <div>
+          <h4 class="font-bold text-lg mb-6">Help</h4>
+          <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shopcart Help</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Returns</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Track Orders</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Contact Us</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Feedback</li>
+            <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Security & Fraud</li>
+          </ul>
+        </div>
+
+      </div><!-- end footer-nav-cols -->
+    </div><!-- end footer-top-grid -->
 
     <!-- Bottom Bar -->
-    <div class="footer-bottom border-t border-gray-100 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
+    <div class="footer-bottom border-t border-gray-100 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
       <div class="footer-bottom-links flex flex-wrap items-center justify-center md:justify-start gap-x-9 gap-y-2">
         <a href="#" class="flex items-center gap-1.5"><i data-lucide="briefcase-business" class="w-7 h-7 text-rose-400"></i><span class="hover:text-[#ff5c4c] text-lg font-semibold">Become Seller</span></a>
         <a href="#" class="flex items-center gap-1.5"><i data-lucide="gift" class="w-7 h-7 text-rose-400"></i><span class="hover:text-[#ff5c4c] text-lg font-semibold">Gift Cards</span></a>
