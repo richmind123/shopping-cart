@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       name: "Laptop sleeve MacBook",
       price: "$59.00",
-      img: "./Images/laptop-sleeve.png",
+      img: "../image",
     },
     { name: "AirPods Max", price: "$559.00", img: "./Images/airpods.png" },
     {
