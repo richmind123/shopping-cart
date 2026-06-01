@@ -12,13 +12,13 @@
 <body>
 
     <!-- Top Bar -->
-    <div class="bg-green-900 text-white text-md px-6 py-3 flex justify-between items-center">
-        <span class="flex items-center gap-2">
+    <div class="topbar bg-green-900 text-white px-6 py-3 flex justify-between items-center">
+        <span class="topbar-phone flex items-center gap-2 text-md">
             <i data-lucide="phone" class="w-4 h-4"></i>
             +2348160093540
         </span>
-        <span>Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
-        <div class="flex gap-4">
+        <span class="topbar-promo">Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
+        <div class="topbar-selects flex gap-4">
             <select class="bg-green-900 text-white border-none outline-none">
                 <option>Eng</option>
                 <option>Fra</option>
@@ -34,74 +34,58 @@
     </div>
 
     <!-- Main Header -->
-    <header class="navbar bg-base-0 shadow-md px-6 py-7 gap-4">
+    <header class="main-header navbar bg-base-0 shadow-md px-6 py-7 gap-4 flex items-center">
         <div class="flex-1">
-            <a href="/shopping-cart/index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer"><img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart</a>
+            <a href="./index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer">
+                <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart
+            </a>
         </div>
-        <nav class="flex gap-4">
-            <!-- Category Dropdown -->
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav flex gap-4">
             <div class="relative">
                 <a id="category-btn" class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer flex items-center gap-1">
-                    Category
-                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                    Category <i data-lucide="chevron-down" class="w-5 h-5"></i>
                 </a>
-
-                <!-- Dropdown -->
                 <div id="category-dropdown" class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
                     <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
                     <div class="grid grid-cols-2 gap-3">
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/Chair1436.png" alt="Furniture" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/Chair1436.png" alt="Furniture" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Furniture</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/handbag1436-4.png" alt="Hand Bag" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/handbag1436-4.png" alt="Hand Bag" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Hand Bag</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/shoes1436-1.png" alt="Shoe" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/shoes1436-1.png" alt="Shoe" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Shoe</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <a href="/shopping-cart/headphones.html" class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white transition-all duration-200 group">
-                            <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center">
-                                <img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-                            </div>
+                        <a href="/shopping-cart/headphones.html" class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white group">
+                            <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center"><img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" class="w-full h-full object-contain group-hover:scale-110" /></div>
                             <div>
-                                <p class="font-semibold text-gray-800 group-hover:text-green-700 transition-colors">
-                                    Headphone</p>
+                                <p class="font-semibold text-gray-800 group-hover:text-green-700">Headphone</p>
                                 <p class="text-gray-400 text-xs">240 Item Available</p>
                             </div>
                         </a>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/laptoprec1436-2.png" alt="Laptop" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/laptoprec1436-2.png" alt="Laptop" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Laptop</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/Booksangle 1436-5.png" alt="Book" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/Booksangle 1436-5.png" alt="Book" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Book</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -109,14 +93,13 @@
             <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">What's New</a>
             <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">Delivery</a>
         </nav>
-        <div class="flex-1 flex justify-center relative" id="search-container">
+        <!-- Desktop Search -->
+        <div class="desktop-search flex-1 flex justify-center relative" id="search-container">
             <label class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
                 <input type="text" id="search-input" placeholder="Search Product" class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
                 <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
             </label>
-
             <div id="search-results-panel" class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
-
                 <div id="trending-box" class="mb-2">
                     <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Trending Searches</p>
                     <div class="flex flex-wrap gap-2 mb-2">
@@ -125,23 +108,71 @@
                         <span class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">Ipad</span>
                     </div>
                 </div>
-
                 <div id="results-box">
-                    <p id="results-heading" class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
-                        Suggested Products</p>
-                    <div class="space-y-2" id="live-search-results">
-                    </div>
+                    <p id="results-heading" class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Suggested Products</p>
+                    <div class="space-y-2" id="live-search-results"></div>
                 </div>
-
             </div>
         </div>
-        <div class="flex gap-3">
+        <!-- Desktop Account/Cart -->
+        <div class="desktop-account flex gap-3">
             <i data-lucide="user" class="w-7 h-7"></i>
             <a class="cursor-pointer flex text-lg font-medium hover:text-[#ff5c4c]">Account</a>
             <i data-lucide="shopping-cart" class="w-7 h-7"></i>
             <a class="cursor-pointer flex text-lg font-medium hover:text-[#ff5c4c]">Cart</a>
         </div>
+        <!-- Mobile Hamburger -->
+        <button class="mobile-hamburger flex-col gap-1.5 p-2 rounded-lg border border-gray-200 bg-gray-50" id="mobile-hamburger-btn" aria-label="Menu">
+            <span class="w-5 h-0.5 bg-gray-700 block"></span>
+            <span class="w-5 h-0.5 bg-gray-700 block"></span>
+            <span class="w-5 h-0.5 bg-gray-700 block"></span>
+        </button>
     </header>
+
+    <!-- Mobile Nav Panel (inline dropdown below header) -->
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+        <!-- Category toggle -->
+        <button class="nav-item" id="mobile-category-toggle">
+            Category <i data-lucide="chevron-down" class="w-5 h-5" id="cat-chevron"></i>
+        </button>
+        <!-- Category sub-list -->
+        <div class="mobile-category-panel" id="mobile-category-panel">
+            <h3>Popular Categories</h3>
+            <div class="mobile-category-item"><img src="./Images/Chair1436.png" alt="Furniture" />
+                <div>
+                    <p>Furniture</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/handbag1436-4.png" alt="Hand Bag" />
+                <div>
+                    <p>Hand Bag</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/shoes1436-1.png" alt="Shoe" />
+                <div>
+                    <p>Shoe</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item" onclick="window.location='/shopping-cart/headphones.html'"><img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" />
+                <div>
+                    <p>Headphone</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/laptoprec1436-2.png" alt="Laptop" />
+                <div>
+                    <p>Laptop</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/Booksangle 1436-5.png" alt="Book" />
+                <div>
+                    <p>Book</p><span>240 Item Available</span>
+                </div>
+            </div>
+        </div>
+        <a class="nav-item">Deals</a>
+        <a class="nav-item">What's New</a>
+        <a class="nav-item">Delivery</a>
+    </div>
 
     <!-- Hero Banner -->
     <section class="mx-4 my-6 rounded-2xl overflow-hidden bg-[#f5ede0] flex items-center justify-between px-12 py-10 relative min-h-[200px]">
@@ -176,9 +207,9 @@
     </section>
 
     <!-- Products Grid -->
-    <section class="px-8 py-6">
+    <section class="products-section px-8 py-6">
         <h2 class="text-2xl font-bold mb-6">Headphones For You!</h2>
-        <div class="grid grid-cols-4 gap-6">
+        <div class="products-grid grid grid-cols-4 gap-6">
 
             <!-- Card 1 - index 0 -->
             <div class="bg-gray-100 rounded-2xl overflow-hidden cursor-pointer group" onclick="openProduct(0)">
@@ -399,22 +430,90 @@
         </div>
     </section>
 
+
+    <!-- Best Deals -->
+    <section class="deals-section px-16 py-12">
+        <h2 class="text-3xl font-bold mb-8">Todays Best Deals For You!</h2>
+        <div class="overflow-x-scroll cursor-grab active:cursor-grabbing" id="deals-slider">
+            <div class="flex gap-7" id="deals-track" style="width:max-content">
+                <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+                    <div class="card-img-box relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden"><img src="./Images/homepad-mini-min.png" alt="HomePod mini" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" /><button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-5 h-5 text-gray-400"></i></button></div>
+                    <div class="pt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-lg font-bold">HomePod mini</h3><span class="price font-bold">$239.<sup>00</sup></span>
+                        </div>
+                        <p class="desc text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+                        <div class="flex items-center gap-1 text-green-400 mb-4"><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><span class="text-gray-500 text-sm">(121)</span></div><button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+                    <div class="card-img-box relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden"><img src="./Images/instax mini 9-min.png" alt="Instax Mini 9" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" /><button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-5 h-5 text-gray-400"></i></button></div>
+                    <div class="pt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-lg font-bold">Instax Mini 9</h3><span class="price font-bold">$99.<sup>00</sup></span>
+                        </div>
+                        <p class="desc text-gray-500 text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
+                        <div class="flex items-center gap-1 text-green-400 mb-4"><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><span class="text-gray-500 text-sm">(121)</span></div><button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+                    <div class="card-img-box relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden"><img src="./Images/base camp duffel 02-min.png" alt="Base Camp Duffel M" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" /><button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-5 h-5 text-gray-400"></i></button></div>
+                    <div class="pt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-lg font-bold">Base Camp Duffel M</h3><span class="price font-bold">$159.<sup>00</sup></span>
+                        </div>
+                        <p class="desc text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+                        <div class="flex items-center gap-1 text-green-400 mb-4"><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><span class="text-gray-500 text-sm">(121)</span></div><button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+                    <div class="card-img-box relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden"><img src="./Images/tomford watch-min.png" alt="Tomford Watch" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" /><button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-5 h-5 text-gray-400"></i></button></div>
+                    <div class="pt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-lg font-bold">Tomford Watch</h3><span class="price font-bold">$39.<sup>00</sup></span>
+                        </div>
+                        <p class="desc text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+                        <div class="flex items-center gap-1 text-green-400 mb-4"><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><span class="text-gray-500 text-sm">(121)</span></div><button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+                    <div class="card-img-box relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden"><img src="./Images/cabin-min.png" alt="Cabin" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" /><button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-5 h-5 text-gray-400"></i></button></div>
+                    <div class="pt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-lg font-bold">Cabin</h3><span class="price font-bold">$239.<sup>00</sup></span>
+                        </div>
+                        <p class="desc text-gray-500 text-sm mb-2">Selfie mode and selfie mirror, Macro mode</p>
+                        <div class="flex items-center gap-1 text-green-400 mb-4"><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><span class="text-gray-500 text-sm">(121)</span></div><button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="deals-card w-[459px] flex-shrink-0 cursor-pointer group">
+                    <div class="card-img-box relative bg-gray-100 rounded-2xl p-6 flex items-center justify-center h-80 overflow-hidden"><img src="./Images/pendleton water bottle-min.png" alt="Pendleton Water Bottle" class="w-72 h-72 object-contain transition-transform duration-300 group-hover:scale-110" /><button class="absolute top-4 right-4 bg-white rounded-full p-2 shadow"><i data-lucide="heart" class="w-5 h-5 text-gray-400"></i></button></div>
+                    <div class="pt-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <h3 class="text-lg font-bold">Pendleton Water Bottle</h3><span class="price font-bold">$89.<sup>00</sup></span>
+                        </div>
+                        <p class="desc text-gray-500 text-sm mb-2">Table with air purifier, stained veneer/black</p>
+                        <div class="flex items-center gap-1 text-green-400 mb-4"><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><i data-lucide="star" class="w-4 h-4 fill-green-400"></i><span class="text-gray-500 text-sm">(121)</span></div><button class="border-2 border-gray-800 hover:bg-green-900 hover:text-white hover:border-green-900 rounded-full px-6 py-2 text-sm font-semibold cursor-pointer transition-colors duration-300">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="px-16 py-16 border-t border-gray-200">
-        <div class="grid grid-cols-5 gap-8">
 
-            <!-- Logo & Description -->
-            <div class="col-span-1">
+        <!-- Desktop: 5-col grid (logo+payments col | dept | about | services | help) -->
+        <!-- Mobile: logo full width, then 2-col grid for nav links, payments below -->
+        <div class="footer-top-grid grid grid-cols-5 gap-8 mb-10">
+            <div class="footer-logo-col col-span-1">
                 <a class="flex items-center gap-2 cursor-pointer mb-6">
                     <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" />
                     <span class="text-2xl font-extrabold text-green-700">Shopcart</span>
                 </a>
-                <p class="text-gray-500 text-sm mb-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
-                    Velit officia consequat duis enim velit mollit.</p>
-
-                <!-- Accepted Payments -->
+                <p class="text-gray-500 text-sm mb-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
                 <h4 class="font-bold mb-4">Accepted Payments</h4>
-                <div class="grid grid-cols-4 gap-2">
+                <div class="footer-payments-grid grid grid-cols-4 gap-2">
                     <img src="./Images/stripe.png" alt="Stripe" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
                     <img src="./Images/visa.png" alt="Visa" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
                     <img src="./Images/Mastercard.png" alt="Mastercard" class="border border-gray-200 rounded-lg p-1 w-full object-contain h-10" />
@@ -426,133 +525,85 @@
                 </div>
             </div>
 
-            <!-- Department -->
-            <div>
-                <h4 class="font-bold text-lg mb-6">Department</h4>
-                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Fashion</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Education Product</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Frozen Food</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Beverages</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Organic Grocery</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Office Supplies</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Beauty Products</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Books</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Electronics & Gadget</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Travel Accessories</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Fitness</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Sneakers</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Toys</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Furniture</li>
-                </ul>
-            </div>
+            <!-- Cols 2-5 wrapped for mobile 2-col grid -->
+            <div class="footer-nav-cols col-span-4 grid grid-cols-4 gap-8">
 
-            <!-- About Us -->
-            <div>
-                <h4 class="font-bold text-lg mb-6">About Us</h4>
-                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        About Shopcart</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Careers</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        News & Blog</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Help</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Press Center</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Shop By Location</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Shopcart Brands</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Affiliate & Partners</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Ideas & Guides</li>
-                </ul>
-            </div>
+                <!-- Col 2: Department -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Department</h4>
+                    <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Fashion</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Education Product</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Frozen Food</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Beverages</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Organic Grocery</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Office Supplies</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Beauty Products</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Books</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Electronics & Gadget</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Travel Accessories</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Fitness</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Sneakers</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Toys</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Furniture</li>
+                    </ul>
+                </div>
 
-            <!-- Services -->
-            <div>
-                <h4 class="font-bold text-lg mb-6">Services</h4>
-                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Gift Card</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Mobile App</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Shipping & Delivery</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Order Pickup</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Account Signup</li>
-                </ul>
-            </div>
+                <!-- Col 3: About Us -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">About Us</h4>
+                    <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">About Shopcart</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Careers</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">News & Blog</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Help</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Press Center</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shop By Location</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shopcart Brands</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Affiliate & Partners</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Ideas & Guides</li>
+                    </ul>
+                </div>
 
-            <!-- Help -->
-            <div>
-                <h4 class="font-bold text-lg mb-6">Help</h4>
-                <ul class="flex flex-col gap-3 text-gray-500 text-sm">
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Shopcart Help</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Returns</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Track Orders</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Contact Us</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Feedback</li>
-                    <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">
-                        Security & Fraud</li>
-                </ul>
-            </div>
+                <!-- Col 4: Services -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Services</h4>
+                    <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Gift Card</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Mobile App</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shipping & Delivery</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Order Pickup</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Account Signup</li>
+                    </ul>
+                </div>
 
-        </div>
+                <!-- Col 5: Help -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Help</h4>
+                    <ul class="flex flex-col gap-3 text-gray-500 text-sm">
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Shopcart Help</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Returns</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Track Orders</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Contact Us</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Feedback</li>
+                        <li class="hover:text-[#ff5c4c] transition-transform duration-300 ease-out hover:translate-x-4 cursor-pointer">Security & Fraud</li>
+                    </ul>
+                </div>
+
+            </div><!-- end footer-nav-cols -->
+        </div><!-- end footer-top-grid -->
 
         <!-- Bottom Bar -->
-        <div class="border-t border-gray-100 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
-
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-9 gap-y-2">
-
-                <a href="#" class="flex items-center gap-1.5 group">
-                    <i data-lucide="briefcase-business" class="w-7 h-7 text-rose-400"></i>
-                    <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Become Seller</span>
-                </a>
-
-                <a href="#" class="flex items-center gap-1.5">
-                    <i data-lucide="gift" class="w-7 h-7 text-rose-400"></i>
-                    <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Gift Cards</span>
-                </a>
-
-                <a href="#" class="flex items-center gap-1.5">
-                    <i data-lucide="help-circle" class="w-7 h-7 text-rose-400"></i>
-                    <span class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Help Center</span>
-                </a>
-
-                <a href="#" class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Terms of Service</a>
-                <a href="#" class="hover:text-[#ff5c4c] transition-colors text-lg font-semibold">Privacy & Policy</a>
+        <div class="footer-bottom border-t border-gray-100 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-500 gap-4">
+            <div class="footer-bottom-links flex flex-wrap items-center justify-center md:justify-start gap-x-9 gap-y-2">
+                <a href="#" class="flex items-center gap-1.5"><i data-lucide="briefcase-business" class="w-7 h-7 text-rose-400"></i><span class="hover:text-[#ff5c4c] text-lg font-semibold">Become Seller</span></a>
+                <a href="#" class="flex items-center gap-1.5"><i data-lucide="gift" class="w-7 h-7 text-rose-400"></i><span class="hover:text-[#ff5c4c] text-lg font-semibold">Gift Cards</span></a>
+                <a href="#" class="flex items-center gap-1.5"><i data-lucide="help-circle" class="w-7 h-7 text-rose-400"></i><span class="hover:text-[#ff5c4c] text-lg font-semibold">Help Center</span></a>
+                <a href="#" class="hover:text-[#ff5c4c] text-lg font-semibold">Terms of Service</a>
+                <a href="#" class="hover:text-[#ff5c4c] text-lg font-semibold">Privacy & Policy</a>
             </div>
-
-            <p class="text-center md:text-right text-lg font-semibold">
-                © 2026 Shopcart. All rights reserved. | Made with ❤️ by <span class="text-green-700 font-medium">Musemind</span>
-            </p>
+            <p class="footer-copyright text-center md:text-right text-lg font-semibold">© 2026 Shopcart. All rights reserved. | Made with ❤️ by <span class="text-green-700 font-medium">Musemind</span></p>
         </div>
-
     </footer>
 
     <script type="module" src="./src/main.js"></script>
