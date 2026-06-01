@@ -6,18 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./public/Images/dodge-1.png">
     <title>Shopcart - Checkout</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* ── CHECKOUT PAGE MOBILE RESPONSIVE ── */
+
+        /* BREADCRUMB */
+        @media (max-width: 768px) {
+            .breadcrumb {
+                padding: 0.75rem 1rem !important;
+                font-size: 0.75rem !important;
+            }
+        }
+
+        /* CHECKOUT MAIN GRID: 3-col → 1-col stacked */
+        @media (max-width: 768px) {
+            .checkout-main {
+                grid-template-columns: 1fr !important;
+                padding: 1rem !important;
+                gap: 1.25rem !important;
+            }
+
+            .checkout-left {
+                grid-column: span 1 !important;
+            }
+
+            /* Delivery form: 2-col → 1-col */
+            .delivery-form-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .delivery-form-grid .col-span-2 {
+                grid-column: span 1 !important;
+            }
+
+            /* Review & Delivery boxes */
+            .checkout-box {
+                padding: 1.25rem !important;
+                border-radius: 1rem !important;
+            }
+
+            .checkout-box h2 {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* Save info button smaller */
+            .save-info-btn {
+                font-size: 0.75rem !important;
+                padding: 0.4rem 0.85rem !important;
+            }
+        }
+
+        /* ORDER SUMMARY */
+        @media (max-width: 768px) {
+            .order-summary {
+                padding: 1.25rem !important;
+            }
+
+            .order-summary h2 {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* Coupon input + button */
+            .coupon-row {
+                flex-direction: row !important;
+                gap: 0.5rem !important;
+            }
+
+            .coupon-row button {
+                font-size: 0.75rem !important;
+                padding: 0.5rem 0.75rem !important;
+                white-space: nowrap !important;
+            }
+
+            /* Pay button */
+            #pay-btn {
+                font-size: 1rem !important;
+                padding: 1rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Top Bar -->
-    <div class="bg-green-900 text-white text-md px-6 py-3 flex justify-between items-center">
-        <span class="flex items-center gap-2">
+    <div class="topbar bg-green-900 text-white text-md px-6 py-3 flex justify-between items-center">
+        <span class="topbar-phone flex items-center gap-2">
             <i data-lucide="phone" class="w-4 h-4"></i>
             +2348160093540
         </span>
-        <span>Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
-        <div class="flex gap-4">
+        <span class="topbar-promo">Get 50% Off on Selected Items | <a class="font-bold cursor-pointer">Shop Now</a></span>
+        <div class="topbar-selects flex gap-4">
             <select class="bg-green-900 text-white border-none outline-none">
                 <option>Eng</option>
                 <option>Fra</option>
@@ -33,74 +114,58 @@
     </div>
 
     <!-- Main Header -->
-    <header class="navbar bg-base-0 shadow-md px-6 py-7 gap-4">
+    <header class="main-header navbar bg-base-0 shadow-md px-6 py-7 gap-4 flex items-center">
         <div class="flex-1">
-            <a href="/shopping-cart/index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer"><img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart</a>
+            <a href="/shopping-cart/index.html" class="text-3xl gap-2 font-extrabold flex text-green-700 cursor-pointer">
+                <img src="./Images/logo.png" alt="Shopcart Logo" class="w-10 h-10 object-contain" /> Shopcart
+            </a>
         </div>
-        <nav class="flex gap-4">
-            <!-- Category Dropdown -->
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav flex gap-4">
             <div class="relative">
                 <a id="category-btn" class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer flex items-center gap-1">
-                    Category
-                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                    Category <i data-lucide="chevron-down" class="w-5 h-5"></i>
                 </a>
-
-                <!-- Dropdown -->
                 <div id="category-dropdown" class="absolute top-full left-0 mt-2 w-[837px] bg-white rounded-2xl shadow-xl p-6 z-50 hidden">
                     <h3 class="text-lg font-bold mb-4">Popular Categories</h3>
                     <div class="grid grid-cols-2 gap-3">
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/Chair1436.png" alt="Furniture" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/Chair1436.png" alt="Furniture" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Furniture</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/handbag1436-4.png" alt="Hand Bag" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/handbag1436-4.png" alt="Hand Bag" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Hand Bag</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/shoes1436-1.png" alt="Shoe" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/shoes1436-1.png" alt="Shoe" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Shoe</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
                         <a href="/shopping-cart/headphones.html" class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50 bg-white transition-all duration-200 group">
-                            <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center">
-                                <img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
-                            </div>
+                            <div class="w-12 h-12 bg-gray-50 rounded-lg p-1 flex items-center justify-center"><img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" class="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" /></div>
                             <div>
-                                <p class="font-semibold text-gray-800 group-hover:text-green-700 transition-colors">
-                                    Headphone</p>
+                                <p class="font-semibold text-gray-800 group-hover:text-green-700 transition-colors">Headphone</p>
                                 <p class="text-gray-400 text-xs">240 Item Available</p>
                             </div>
                         </a>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/laptoprec1436-2.png" alt="Laptop" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/laptoprec1436-2.png" alt="Laptop" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Laptop</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
-                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50">
-                            <img src="./Images/Booksangle 1436-5.png" alt="Book" class="w-14 h-14 object-contain" />
+                        <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-3 cursor-pointer hover:bg-gray-50"><img src="./Images/Booksangle 1436-5.png" alt="Book" class="w-14 h-14 object-contain" />
                             <div>
                                 <p class="font-semibold">Book</p>
                                 <p class="text-gray-400 text-sm">240 Item Available</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -108,14 +173,13 @@
             <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">What's New</a>
             <a class="text-lg font-medium hover:text-[#ff5c4c] cursor-pointer">Delivery</a>
         </nav>
-        <div class="flex-1 flex justify-center relative" id="search-container">
+        <!-- Desktop Search -->
+        <div class="desktop-search flex-1 flex justify-center relative" id="search-container">
             <label class="input input-bordered rounded-full flex items-center gap-2 w-full h-11 max-w-md px-4 border border-gray-300 focus-within:border-green-700 bg-white z-20">
                 <input type="text" id="search-input" placeholder="Search Product" class="grow placeholder:font-semibold text-lg bg-transparent outline-none" autocomplete="off" />
                 <i data-lucide="search" class="w-5 h-5 text-gray-400"></i>
             </label>
-
             <div id="search-results-panel" class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-50 hidden">
-
                 <div id="trending-box" class="mb-2">
                     <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Trending Searches</p>
                     <div class="flex flex-wrap gap-2 mb-2">
@@ -124,47 +188,87 @@
                         <span class="text-sm bg-gray-100 hover:bg-green-50 hover:text-green-800 px-3 py-1 rounded-full cursor-pointer transition-colors trending-tag">Ipad</span>
                     </div>
                 </div>
-
                 <div id="results-box">
-                    <p id="results-heading" class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">
-                        Suggested Products</p>
-                    <div class="space-y-2" id="live-search-results">
-                    </div>
+                    <p id="results-heading" class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Suggested Products</p>
+                    <div class="space-y-2" id="live-search-results"></div>
                 </div>
-
             </div>
         </div>
-        <div class="flex gap-3">
+        <!-- Desktop Account/Cart -->
+        <div class="desktop-account flex gap-3">
             <i data-lucide="user" class="w-7 h-7"></i>
             <a class="cursor-pointer flex text-lg font-medium hover:text-[#ff5c4c]">Account</a>
             <i data-lucide="shopping-cart" class="w-7 h-7"></i>
             <a class="cursor-pointer flex text-lg font-medium hover:text-[#ff5c4c]">Cart</a>
         </div>
+        <!-- Mobile Hamburger -->
+        <button class="mobile-hamburger flex-col gap-1.5 p-2 rounded-lg border border-gray-200 bg-gray-50" id="mobile-hamburger-btn" aria-label="Menu">
+            <span class="w-5 h-0.5 bg-gray-700 block"></span>
+            <span class="w-5 h-0.5 bg-gray-700 block"></span>
+            <span class="w-5 h-0.5 bg-gray-700 block"></span>
+        </button>
     </header>
 
+    <!-- Mobile Nav Panel -->
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+        <button class="nav-item" id="mobile-category-toggle">
+            Category <i data-lucide="chevron-down" class="w-5 h-5" id="cat-chevron"></i>
+        </button>
+        <div class="mobile-category-panel" id="mobile-category-panel">
+            <h3>Popular Categories</h3>
+            <div class="mobile-category-item"><img src="./Images/Chair1436.png" alt="Furniture" />
+                <div>
+                    <p>Furniture</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/handbag1436-4.png" alt="Hand Bag" />
+                <div>
+                    <p>Hand Bag</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/shoes1436-1.png" alt="Shoe" />
+                <div>
+                    <p>Shoe</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item" onclick="window.location='/shopping-cart/headphones.html'"><img src="./Images/HeadphoneRectangle1436-3.png" alt="Headphone" />
+                <div>
+                    <p>Headphone</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/laptoprec1436-2.png" alt="Laptop" />
+                <div>
+                    <p>Laptop</p><span>240 Item Available</span>
+                </div>
+            </div>
+            <div class="mobile-category-item"><img src="./Images/Booksangle 1436-5.png" alt="Book" />
+                <div>
+                    <p>Book</p><span>240 Item Available</span>
+                </div>
+            </div>
+        </div>
+        <a class="nav-item">Deals</a>
+        <a class="nav-item">What's New</a>
+        <a class="nav-item">Delivery</a>
+    </div>
+
     <!-- Breadcrumb -->
-    <div class="px-16 py-4 text-sm text-gray-500 flex items-center gap-2">
+    <div class="breadcrumb px-16 py-4 text-sm text-gray-500 flex items-center gap-2">
         <a href="/shopping-cart/index.html" class="hover:text-green-700 cursor-pointer">Home</a>
         <span>/</span>
         <span class="text-gray-800 font-medium">Checkout</span>
     </div>
 
     <!-- Checkout Body -->
-    <main class="px-16 py-8 grid grid-cols-3 gap-8 items-start">
+    <main class="checkout-main px-16 py-8 grid grid-cols-3 gap-8 items-start">
 
         <!-- LEFT COLUMN -->
-        <div class="col-span-2 flex flex-col gap-6">
+        <div class="checkout-left col-span-2 flex flex-col gap-6">
 
             <!-- Review Item & Shipping -->
-            <div class="border border-gray-200 rounded-2xl p-6">
+            <div class="checkout-box border border-gray-200 rounded-2xl p-6">
                 <h2 class="text-xl font-bold mb-5">Review Item And Shipping</h2>
-
-                <!-- Cart Items -->
-                <div id="cart-items" class="flex flex-col gap-4 mb-6">
-                    <!-- Populated by JS -->
-                </div>
-
-                <!-- Returning Customer -->
+                <div id="cart-items" class="flex flex-col gap-4 mb-6"></div>
                 <label class="flex items-center gap-2 cursor-pointer text-sm text-gray-600 mt-4">
                     <input type="checkbox" class="w-4 h-4 accent-green-700" id="returning-customer" />
                     Returning Customer?
@@ -172,15 +276,14 @@
             </div>
 
             <!-- Delivery Information -->
-            <div class="border border-gray-200 rounded-2xl p-6">
+            <div class="checkout-box border border-gray-200 rounded-2xl p-6">
                 <div class="flex justify-between items-center mb-5">
                     <h2 class="text-xl font-bold">Delivery Information</h2>
-                    <button id="save-info-btn" class="bg-green-900 hover:bg-green-800 text-white text-sm px-5 py-2 rounded-full font-semibold transition-colors duration-300">
+                    <button id="save-info-btn" class="save-info-btn bg-green-900 hover:bg-green-800 text-white text-sm px-5 py-2 rounded-full font-semibold transition-colors duration-300">
                         Save Information
                     </button>
                 </div>
-
-                <div class="grid grid-cols-2 gap-4">
+                <div class="delivery-form-grid grid grid-cols-2 gap-4">
                     <div>
                         <label class="text-sm font-medium text-gray-700 mb-1 block">First Name*</label>
                         <input id="first-name" type="text" placeholder="Type here..." class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
@@ -211,16 +314,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- RIGHT COLUMN: Order Summary -->
         <div class="flex flex-col gap-4">
-            <div class="border border-gray-200 rounded-2xl p-6">
+            <div class="order-summary border border-gray-200 rounded-2xl p-6">
                 <h2 class="text-xl font-bold mb-5">Order Summary</h2>
 
                 <!-- Coupon -->
-                <div class="flex gap-2 mb-6">
+                <div class="coupon-row flex gap-2 mb-6">
                     <input id="coupon-input" type="text" placeholder="Enter Coupon Code" class="flex-1 border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
                     <button onclick="applyCoupon()" class="bg-green-900 hover:bg-green-800 text-white text-sm px-4 py-3 rounded-xl font-semibold transition-colors duration-300 whitespace-nowrap">
                         Apply coupon
@@ -317,18 +419,18 @@
                 <div class="flex items-center gap-3 bg-amber-50 rounded-xl p-3">
                     <img src="./Images/card.png" alt="Shopcart Card" class="w-14 h-10 object-contain" />
                     <div>
-                        <p class="text-sm font-bold">Earn 5% cash back <span class="text-gray-500 font-normal">on
-                                Shopcart</span></p>
+                        <p class="text-sm font-bold">Earn 5% cash back <span class="text-gray-500 font-normal">on Shopcart</span></p>
                         <a class="text-xs text-green-700 underline cursor-pointer">Learn More</a>
                     </div>
                 </div>
-
             </div>
         </div>
 
     </main>
 
     <script type="module" src="./src/checkout.js"></script>
+
+
 
 </body>
 

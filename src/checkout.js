@@ -216,3 +216,33 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "/shopping-cart/index.html";
   };
 });
+
+
+
+// Mobile hamburger toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburgerBtn = document.getElementById('mobile-hamburger-btn');
+  const mobileNavPanel = document.getElementById('mobile-nav-panel');
+  const mobileCategoryToggle = document.getElementById('mobile-category-toggle');
+  const mobileCategoryPanel = document.getElementById('mobile-category-panel');
+  const catChevron = document.getElementById('cat-chevron');
+
+  if (hamburgerBtn && mobileNavPanel) {
+    hamburgerBtn.addEventListener('click', () => {
+      mobileNavPanel.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!hamburgerBtn.contains(e.target) && !mobileNavPanel.contains(e.target)) {
+        mobileNavPanel.classList.remove('open');
+      }
+    });
+  }
+  if (mobileCategoryToggle && mobileCategoryPanel) {
+    mobileCategoryToggle.addEventListener('click', () => {
+      mobileCategoryPanel.classList.toggle('open');
+      if (catChevron) {
+        catChevron.style.transform = mobileCategoryPanel.classList.contains('open') ? 'rotate(180deg)' : '';
+      }
+    });
+  }
+});
