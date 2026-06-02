@@ -47,49 +47,105 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── Save delivery info ──
-  const saveBtn = document.getElementById("save-info-btn");
-  if (saveBtn) {
-    saveBtn.addEventListener("click", () => {
-      const info = {
-        firstName: document.getElementById("first-name").value,
-        lastName: document.getElementById("last-name").value,
-        address: document.getElementById("address").value,
-        city: document.getElementById("city").value,
-        zip: document.getElementById("zip").value,
-        mobile: document.getElementById("mobile").value,
-        email: document.getElementById("delivery-email").value,
-      };
-      localStorage.setItem("deliveryInfo", JSON.stringify(info));
-      saveBtn.textContent = "Saved ✓";
-      saveBtn.classList.add("bg-green-700");
-      setTimeout(() => {
-        saveBtn.textContent = "Save Information";
-        saveBtn.classList.remove("bg-green-700");
-      }, 2000);
+  // ── Pre-fill saved delivery info (must be declared FIRST) ──
+  const savedInfo = JSON.parse(localStorage.getItem("deliveryInfo") || "null");
+
+  // ── Delivery Box ──
+  const deliveryBox = document.querySelector(".checkout-box:nth-child(2)");
+
+  function showDeliverySummary(info) {
+    deliveryBox.innerHTML = `
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold">Delivery Information</h2>
+        <button id="edit-info-btn" class="border border-gray-300 text-gray-700 text-sm px-5 py-2 rounded-full font-semibold hover:border-green-700 hover:text-green-700 transition-colors duration-300">
+          Edit
+        </button>
+      </div>
+      <div class="flex flex-col gap-1 text-sm text-gray-700">
+        <p class="font-bold text-base">${info.firstName} ${info.lastName}</p>
+        <p>${info.address}, ${info.city} ${info.zip}</p>
+        <p>${info.mobile}</p>
+        <p>${info.email}</p>
+      </div>
+    `;
+    document.getElementById("edit-info-btn").addEventListener("click", () => {
+      showDeliveryForm(info);
     });
   }
 
-  // ── Pre-fill saved delivery info ──
-  const savedInfo = JSON.parse(localStorage.getItem("deliveryInfo") || "null");
-  if (savedInfo) {
-    document.getElementById("first-name").value = savedInfo.firstName || "";
-    document.getElementById("last-name").value = savedInfo.lastName || "";
-    document.getElementById("address").value = savedInfo.address || "";
-    document.getElementById("city").value = savedInfo.city || "";
-    document.getElementById("zip").value = savedInfo.zip || "";
-    document.getElementById("mobile").value = savedInfo.mobile || "";
-    document.getElementById("delivery-email").value = savedInfo.email || "";
+  function showDeliveryForm(prefill = {}) {
+    deliveryBox.innerHTML = `
+      <div class="flex justify-between items-center mb-5">
+        <h2 class="text-xl font-bold">Delivery Information</h2>
+        <button id="save-info-btn" class="save-info-btn bg-green-900 hover:bg-green-800 text-white text-sm px-5 py-2 rounded-full font-semibold transition-colors duration-300">
+          Save Information
+        </button>
+      </div>
+      <div class="delivery-form-grid grid grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm font-medium text-gray-700 mb-1 block">First Name*</label>
+          <input id="first-name" type="text" placeholder="Type here..." value="${prefill.firstName || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-700 mb-1 block">Last Name*</label>
+          <input id="last-name" type="text" placeholder="Type here..." value="${prefill.lastName || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+        <div class="col-span-2">
+          <label class="text-sm font-medium text-gray-700 mb-1 block">Address*</label>
+          <input id="address" type="text" placeholder="Type here..." value="${prefill.address || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-700 mb-1 block">City / Town*</label>
+          <input id="city" type="text" placeholder="Type here..." value="${prefill.city || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-700 mb-1 block">Zip Code*</label>
+          <input id="zip" type="text" placeholder="Type here..." value="${prefill.zip || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-700 mb-1 block">Mobile*</label>
+          <input id="mobile" type="tel" placeholder="Type here..." value="${prefill.mobile || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+        <div>
+          <label class="text-sm font-medium text-gray-700 mb-1 block">Email*</label>
+          <input id="delivery-email" type="email" placeholder="Type here..." value="${prefill.email || ""}" class="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm outline-none focus:border-green-700 transition-colors" />
+        </div>
+      </div>
+    `;
+
+    document.getElementById("save-info-btn").addEventListener("click", () => {
+      const info = {
+        firstName: document.getElementById("first-name").value.trim(),
+        lastName: document.getElementById("last-name").value.trim(),
+        address: document.getElementById("address").value.trim(),
+        city: document.getElementById("city").value.trim(),
+        zip: document.getElementById("zip").value.trim(),
+        mobile: document.getElementById("mobile").value.trim(),
+        email: document.getElementById("delivery-email").value.trim(),
+      };
+
+      if (!info.firstName || !info.lastName || !info.address || !info.city || !info.zip || !info.mobile || !info.email) {
+        alert("Please fill in all delivery information fields.");
+        return;
+      }
+
+      localStorage.setItem("deliveryInfo", JSON.stringify(info));
+      showDeliverySummary(info);
+    });
+  }
+
+  // Show summary if saved, else show form
+  if (savedInfo && savedInfo.firstName) {
+    showDeliverySummary(savedInfo);
+  } else {
+    showDeliveryForm();
   }
 
   // ── Load cart ──
   let cart = JSON.parse(localStorage.getItem("cart") || "[]");
 
-  // If cart is empty, use selected product as single item
   if (cart.length === 0) {
-    const selected = JSON.parse(
-      localStorage.getItem("selectedProduct") || "null",
-    );
+    const selected = JSON.parse(localStorage.getItem("selectedProduct") || "null");
     if (selected) {
       cart = [{ ...selected, quantity: 1 }];
     }
@@ -105,9 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
   } else {
-    cartItemsContainer.innerHTML = cart
-      .map(
-        (item) => `
+    cartItemsContainer.innerHTML = cart.map((item) => `
       <div class="flex items-center gap-4 border border-gray-100 rounded-xl p-4">
         <div class="w-20 h-20 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0">
           <img src="${item.img}" alt="${item.name}" class="w-full h-full object-contain p-2" />
@@ -121,9 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="font-bold text-base">$${(item.price * item.quantity).toFixed(2)}</p>
         </div>
       </div>
-    `,
-      )
-      .join("");
+    `).join("");
   }
 
   // ── Pricing ──
@@ -131,17 +183,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let couponDiscount = 0;
 
   function calcTotals() {
-    const subtotal = cart.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0,
-    );
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const tax = subtotal * 0.1;
     const total = subtotal + tax - couponDiscount;
 
     document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
     document.getElementById("tax").textContent = `$${tax.toFixed(2)}`;
-    document.getElementById("discount").textContent =
-      `-$${couponDiscount.toFixed(2)}`;
+    document.getElementById("discount").textContent = `-$${couponDiscount.toFixed(2)}`;
     document.getElementById("total").textContent = `≈$${total.toFixed(2)}`;
     document.getElementById("pay-btn").textContent = `Pay $${total.toFixed(2)}`;
   }
@@ -150,17 +198,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── Coupon ──
   window.applyCoupon = function () {
-    const code = document
-      .getElementById("coupon-input")
-      .value.trim()
-      .toUpperCase();
+    const code = document.getElementById("coupon-input").value.trim().toUpperCase();
     const validCoupons = { SAVE10: 0.1, SHOPCART: 0.15, WELCOME: 0.05 };
 
     if (validCoupons[code] && !couponApplied) {
-      const subtotal = cart.reduce(
-        (sum, item) => sum + item.price * item.quantity,
-        0,
-      );
+      const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
       couponDiscount = subtotal * validCoupons[code];
       couponApplied = true;
       calcTotals();
@@ -175,30 +217,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── Place Order ──
   window.placeOrder = function () {
-    const firstName = document.getElementById("first-name").value.trim();
-    const lastName = document.getElementById("last-name").value.trim();
-    const address = document.getElementById("address").value.trim();
-    const city = document.getElementById("city").value.trim();
-    const zip = document.getElementById("zip").value.trim();
-    const mobile = document.getElementById("mobile").value.trim();
-    const email = document.getElementById("delivery-email").value.trim();
+    const saved = JSON.parse(localStorage.getItem("deliveryInfo") || "null");
 
-    if (
-      !firstName ||
-      !lastName ||
-      !address ||
-      !city ||
-      !zip ||
-      !mobile ||
-      !email
-    ) {
+    // Get from form if visible, else from saved
+    const firstName = document.getElementById("first-name")?.value.trim() || saved?.firstName;
+    const lastName = document.getElementById("last-name")?.value.trim() || saved?.lastName;
+    const address = document.getElementById("address")?.value.trim() || saved?.address;
+    const city = document.getElementById("city")?.value.trim() || saved?.city;
+    const zip = document.getElementById("zip")?.value.trim() || saved?.zip;
+    const mobile = document.getElementById("mobile")?.value.trim() || saved?.mobile;
+    const email = document.getElementById("delivery-email")?.value.trim() || saved?.email;
+
+    if (!firstName || !lastName || !address || !city || !zip || !mobile || !email) {
       alert("Please fill in all delivery information fields.");
       return;
     }
 
-    const paymentMethod = document.querySelector(
-      'input[name="payment"]:checked',
-    )?.value;
+    const paymentMethod = document.querySelector('input[name="payment"]:checked')?.value;
     if (paymentMethod === "card") {
       const cardNum = document.getElementById("card-number").value.trim();
       const expiry = document.getElementById("expiry").value.trim();
@@ -209,17 +244,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Clear cart after order
     localStorage.removeItem("cart");
-
     alert(`🎉 Order placed successfully! Thank you, ${firstName}!`);
     window.location.href = "/shopping-cart/index.html";
   };
 });
 
-
-
-// Mobile hamburger toggle
+// ── Mobile hamburger toggle ──
 document.addEventListener('DOMContentLoaded', () => {
   const hamburgerBtn = document.getElementById('mobile-hamburger-btn');
   const mobileNavPanel = document.getElementById('mobile-nav-panel');
