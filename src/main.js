@@ -210,10 +210,11 @@ window.openProduct = function (index) {
 document.addEventListener("DOMContentLoaded", () => {
   createIcons({ icons });
 
-  // Card Snap Slider with Loop
+  // ── Deals Slider: Mouse drag + Touch swipe ──
   const slider = document.getElementById("deals-slider");
 
   if (slider) {
+    // ── Mouse drag (desktop) ──
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -223,24 +224,18 @@ document.addEventListener("DOMContentLoaded", () => {
       return firstCard ? firstCard.offsetWidth + 24 : 0;
     };
 
-    const getMaxScroll = () => slider.scrollWidth - slider.clientWidth;
-
     slider.addEventListener("mousedown", (e) => {
       isDown = true;
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
     });
 
-    slider.addEventListener("mouseleave", () => {
-      isDown = false;
-    });
-
+    slider.addEventListener("mouseleave", () => { isDown = false; });
     slider.addEventListener("mouseup", () => {
       if (!isDown) return;
       isDown = false;
       const cardWidth = getCardWidth();
       const moved = slider.scrollLeft - scrollLeft;
-
       if (moved > 50) {
         slider.scrollLeft = scrollLeft + cardWidth;
       } else if (moved < -50) {
@@ -257,10 +252,56 @@ document.addEventListener("DOMContentLoaded", () => {
       slider.scrollLeft = scrollLeft - (x - startX);
     });
 
+    // ── Touch swipe (mobile) ──
+    // Key fix: we track the direction of the swipe on touchstart/touchmove.
+    // Only preventDefault (block scroll) when the swipe is MORE horizontal
+    // than vertical — otherwise we let the page scroll normally.
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchScrollLeft = 0;
+    let touchLocked = null; // 'horizontal' | 'vertical' | null
 
+    slider.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      touchScrollLeft = slider.scrollLeft;
+      touchLocked = null; // reset direction lock each gesture
+    }, { passive: true });
+
+    slider.addEventListener("touchmove", (e) => {
+      const dx = e.touches[0].clientX - touchStartX;
+      const dy = e.touches[0].clientY - touchStartY;
+
+      // Determine lock direction on first significant movement
+      if (touchLocked === null && (Math.abs(dx) > 5 || Math.abs(dy) > 5)) {
+        touchLocked = Math.abs(dx) > Math.abs(dy) ? "horizontal" : "vertical";
+      }
+
+      if (touchLocked === "horizontal") {
+        // It's a horizontal swipe — scroll the slider and block page scroll
+        e.preventDefault();
+        slider.scrollLeft = touchScrollLeft - dx;
+      }
+      // If vertical, do nothing — the browser handles page scroll naturally
+    }, { passive: false }); // passive:false needed so preventDefault() works
+
+    slider.addEventListener("touchend", (e) => {
+      if (touchLocked !== "horizontal") return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const cardWidth = getCardWidth();
+      if (dx < -50) {
+        slider.scrollBy({ left: cardWidth, behavior: "smooth" });
+      } else if (dx > 50) {
+        slider.scrollBy({ left: -cardWidth, behavior: "smooth" });
+      } else {
+        // Snap back to nearest card
+        const nearest = Math.round(slider.scrollLeft / cardWidth) * cardWidth;
+        slider.scrollTo({ left: nearest, behavior: "smooth" });
+      }
+    }, { passive: true });
   }
 
-  // Filter Products
+  // ── Filter Products ──
   window.filterProducts = function (category) {
     const cards = document.querySelectorAll(".product-card");
     const buttons = document.querySelectorAll(".filter-btn");
@@ -268,11 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buttons.forEach((btn) => {
       btn.classList.remove("bg-green-800", "text-white", "border-green-800");
     });
-    event.target.classList.add(
-      "bg-green-800",
-      "text-white",
-      "border-green-800",
-    );
+    event.target.classList.add("bg-green-800", "text-white", "border-green-800");
 
     cards.forEach((card) => {
       if (category === "all" || card.dataset.category === category) {
@@ -283,7 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Parallax Effect
+  // ── Parallax Effect ──
   const parallaxBg = document.getElementById("parallax-bg");
   if (parallaxBg) {
     window.addEventListener("scroll", () => {
@@ -295,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Scroll Reveal Animation
+  // ── Scroll Reveal Animation ──
   const revealElements = document.querySelectorAll("section, footer");
   const observer = new IntersectionObserver(
     (entries) => {
@@ -305,11 +342,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1 },
+    { threshold: 0.1 }
   );
   revealElements.forEach((el) => observer.observe(el));
 
-  // Category Dropdown Toggle
+  // ── Category Dropdown Toggle ──
   const categoryBtn = document.getElementById("category-btn");
   const dropdown = document.getElementById("category-dropdown");
 
@@ -320,42 +357,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     document.addEventListener("click", (e) => {
-      const isClickInsideDropdown = dropdown.contains(e.target);
-      const isClickOnButton = categoryBtn.contains(e.target);
-      if (!isClickInsideDropdown && !isClickOnButton) {
+      if (!dropdown.contains(e.target) && !categoryBtn.contains(e.target)) {
         dropdown.classList.add("hidden");
       }
     });
   }
 
-  // Search
+  // ── Search ──
   const productsCatalog = [
-    {
-      name: "Laptop sleeve MacBook",
-      price: "$59.00",
-      img: "../image",
-    },
+    { name: "Laptop sleeve MacBook", price: "$59.00", img: "../image" },
     { name: "AirPods Max", price: "$559.00", img: "./Images/airpods.png" },
-    {
-      name: "Flower Laptop Sleeve",
-      price: "$39.00",
-      img: "./Images/flower-sleeve.png",
-    },
-    {
-      name: "Supreme Water Bottle",
-      price: "$19.00",
-      img: "./Images/water-bottle.png",
-    },
-    {
-      name: "MacBook pro 13",
-      price: "$1099.00",
-      img: "./Images/macbook-pro.png",
-    },
-    {
-      name: "HomePod mini",
-      price: "$59.00",
-      img: "./Images/homepod-orange.png",
-    },
+    { name: "Flower Laptop Sleeve", price: "$39.00", img: "./Images/flower-sleeve.png" },
+    { name: "Supreme Water Bottle", price: "$19.00", img: "./Images/water-bottle.png" },
+    { name: "MacBook pro 13", price: "$1099.00", img: "./Images/macbook-pro.png" },
+    { name: "HomePod mini", price: "$59.00", img: "./Images/homepod-orange.png" },
     { name: "Ipad Mini", price: "$539.00", img: "./Images/ipad-mini.png" },
   ];
 
@@ -373,19 +388,18 @@ document.addEventListener("DOMContentLoaded", () => {
       `;
       return;
     }
-
     liveResultsContainer.innerHTML = filteredItems
       .map(
         (product) => `
-      <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors group">
-        <img src="${product.img}" alt="${product.name}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg" />
-        <div class="flex-1">
-          <p class="font-semibold text-sm text-gray-800 group-hover:text-green-700 transition-colors">${product.name}</p>
-          <p class="text-gray-500 text-xs">${product.price}</p>
+        <div class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors group">
+          <img src="${product.img}" alt="${product.name}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg" />
+          <div class="flex-1">
+            <p class="font-semibold text-sm text-gray-800 group-hover:text-green-700 transition-colors">${product.name}</p>
+            <p class="text-gray-500 text-xs">${product.price}</p>
+          </div>
+          <i class="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-all" data-lucide="arrow-up-left"></i>
         </div>
-        <i class="w-4 h-4 text-gray-300 group-hover:text-gray-500 transition-all" data-lucide="arrow-up-left"></i>
-      </div>
-    `,
+      `
       )
       .join("");
 
@@ -403,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trendingBox.classList.add("hidden");
         resultsHeading.textContent = "Matching Results";
         const matches = productsCatalog.filter((product) =>
-          product.name.toLowerCase().includes(query),
+          product.name.toLowerCase().includes(query)
         );
         renderSearchResults(matches);
       }
@@ -432,32 +446,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
-
-
-
-
-
-
-// Mobile hamburger toggle
-const hamburgerBtn = document.getElementById('mobile-hamburger-btn');
-const mobileNavPanel = document.getElementById('mobile-nav-panel');
-hamburgerBtn.addEventListener('click', () => {
-  mobileNavPanel.classList.toggle('open');
+// ── Mobile hamburger toggle ──
+const hamburgerBtn = document.getElementById("mobile-hamburger-btn");
+const mobileNavPanel = document.getElementById("mobile-nav-panel");
+hamburgerBtn.addEventListener("click", () => {
+  mobileNavPanel.classList.toggle("open");
 });
 
 // Category toggle inside mobile nav
-const mobileCategoryToggle = document.getElementById('mobile-category-toggle');
-const mobileCategoryPanel = document.getElementById('mobile-category-panel');
-const catChevron = document.getElementById('cat-chevron');
-mobileCategoryToggle.addEventListener('click', () => {
-  mobileCategoryPanel.classList.toggle('open');
-  catChevron.style.transform = mobileCategoryPanel.classList.contains('open') ? 'rotate(180deg)' : '';
+const mobileCategoryToggle = document.getElementById("mobile-category-toggle");
+const mobileCategoryPanel = document.getElementById("mobile-category-panel");
+const catChevron = document.getElementById("cat-chevron");
+mobileCategoryToggle.addEventListener("click", () => {
+  mobileCategoryPanel.classList.toggle("open");
+  catChevron.style.transform = mobileCategoryPanel.classList.contains("open")
+    ? "rotate(180deg)"
+    : "";
 });
 
 // Close nav when clicking outside
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   if (!hamburgerBtn.contains(e.target) && !mobileNavPanel.contains(e.target)) {
-    mobileNavPanel.classList.remove('open');
+    mobileNavPanel.classList.remove("open");
   }
 });
