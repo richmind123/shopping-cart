@@ -26,7 +26,7 @@ section.animate-show {
   scrollbar-width: none;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
+  touch-action: pan-x;
 }
 
 #deals-slider::-webkit-scrollbar {
@@ -699,7 +699,7 @@ section.animate-show {
     -webkit-overflow-scrolling: touch !important;
     scroll-snap-type: x proximity !important;
     cursor: default !important;
-    touch-action: pan-y !important;
+    touch-action: pan-x !important;
   }
 
   .deals-card {
